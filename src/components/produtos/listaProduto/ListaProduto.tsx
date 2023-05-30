@@ -18,14 +18,6 @@ function ListaProduto() {
   const [quantidadeCards, setQuantidadeCards] = useState(9);
 
 
-  useEffect(() => {
-    if (token == "") {
-      alert("Você precisa estar logado")
-      navigate("/login")
-
-    }
-  }, [token])
-
   async function getProdutos() {
     await busca("/produtos", setProdutos, {
       headers: {
