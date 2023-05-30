@@ -7,7 +7,8 @@ import Produto from '../../../model/Produto';
 import { busca } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
- 
+import Input from '@mui/joy/Input';
+
 function ListaProduto() {
   const [produtos, setProdutos] = useState<Produto[]>([])
   let navigate = useNavigate();
@@ -16,12 +17,15 @@ function ListaProduto() {
   );
 
   const [quantidadeCards, setQuantidadeCards] = useState(9);
-
+  const [termoBusca, setTermoBusca] = useState('');
 
   async function getProdutos() {
     await busca("/produtos", setProdutos, {
       headers: {
         'Authorization': token
+      },
+      params: {
+        nome: termoBusca
       }
     })
   }
@@ -30,14 +34,27 @@ function ListaProduto() {
 
     getProdutos()
 
-  }, [produtos.length])
+  }, [termoBusca])
 
   return (
     <>
       <div style={{ textAlign: 'center' }}>
+      
+      <Input placeholder="Buscar Produtos" variant="soft" color="info"
+      type="text"
+      value={termoBusca}
+      onChange={(e) => setTermoBusca(e.target.value)}
+      className='input-busca'
+      size="md"
+      
+      />
+  
       <Grid container spacing={2}>
       {
-        produtos.slice(0, quantidadeCards).map(produto => (
+        produtos
+        .filter((produto) => produto.nome.toLowerCase().includes(termoBusca.toLowerCase()))
+        .slice(0, quantidadeCards)
+        .map(produto => (
           <Grid item xs={12} sm={6} md={4} key={produto.id}>
           <Box m={2} >
             <Card variant="outlined">
