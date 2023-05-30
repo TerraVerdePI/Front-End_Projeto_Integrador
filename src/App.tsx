@@ -25,7 +25,7 @@ function App() {
         <Navbar />
         
         <Routes>
-          
+
           <Route path='/' element={<LadingPage />} />
 
           <Route path='/login' element={<Login />} />

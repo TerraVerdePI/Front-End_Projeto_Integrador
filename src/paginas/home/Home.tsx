@@ -7,6 +7,7 @@ import ModalProduto from "../../components/produtos/modalProduto/ModalProduto";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../store/tokens/tokensReducer";
+import Perguntas from "../../components/perguntas/Perguntas";
 
 function Home() {
     let navigate = useNavigate();
@@ -47,7 +48,7 @@ function Home() {
                     <TabProduto />
                 </Grid>
             </Grid>
-
+            <Perguntas/>
         </>
     );
 }
