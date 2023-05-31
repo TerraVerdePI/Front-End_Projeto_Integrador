@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
 import { addToken } from "../../../store/tokens/actions";
-import NavbarInicial from './NavbarInicial';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 function Navbar() {
   const token = useSelector<TokenState, TokenState["tokens"]>(
@@ -67,11 +67,7 @@ function Navbar() {
             </Box>
             <Grid direction={"row"} display={"flex"}>
               <Box mx={1} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
-                <Link to="/login">
-                  <Button className='botao' color="secondary" variant="contained" style={{ marginLeft: 'auto' }}>
-                    Entrar
-                  </Button>
-                </Link>
+                <ShoppingCartIcon />
               </Box>
               <Box mx={1} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }} onClick={logout}>
                 <Button className='botao' color="secondary" variant="contained" style={{ marginLeft: 'auto' }}>
