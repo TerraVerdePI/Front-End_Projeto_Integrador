@@ -1,0 +1,13 @@
+.margin{
+    margin: 10px!important;
+}
+
+.border{
+    border-radius: 15px!important;
+    background-color: rgb(100, 100, 100);
+}
+
+.background{
+    background-color: rgb(138, 138, 138);
+    border-radius: 10px;
+}

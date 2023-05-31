@@ -3,7 +3,6 @@ import { Typography, Grid, Button } from '@material-ui/core';
 import { Box } from '@mui/material';
 import './Home.css';
 import TabProduto from "../../components/produtos/tabProduto/TabProduto";
-import ModalProduto from "../../components/produtos/modalProduto/ModalProduto";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../store/tokens/tokensReducer";
@@ -31,11 +30,14 @@ function Home() {
                         <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" style={{ color: "white", fontWeight: "bold" }}>venda aqui seus alimentos e cursos!</Typography>
                     </Box>
                     <Box display="flex" justifyContent="center">
-                        <Box marginRight={1}>
-                            <ModalProduto />
-                        </Box>
-                        <Link to="/produtos" className="text-decoration-none">
+                        
+                        <Link to="/formularioProduto" className="text-decoration-none">
                         <Button variant="outlined" style={{ borderColor: "#595b5a", backgroundColor: "#7cf49a", color: "#595b5a" }}>
+                            Cadastrar Produto
+                        </Button>
+                        </Link>
+                        <Link to="/produtos" className="text-decoration-none">
+                        <Button variant="outlined" style={{ borderColor: "#595b5a", backgroundColor: "#7cf49a", color: "#595b5a", marginLeft: 5 }}>
                             Ver Produtos
                         </Button>
                         </Link>

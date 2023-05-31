@@ -1,6 +1,12 @@
-.imageLogo{
-    background-image: url(https://user-images.githubusercontent.com/117536257/231513860-7330bfe0-31fa-4403-ba25-a606b7747186.jpg);
-    min-height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
+.img1{
+    border-radius: 60px!important;
+    scale: 0.9!important;
+}
+.img2{
+    border-radius: 40px!important;
+    scale: 1.4!important;
+    margin: 60px!important;
+}
+.margin{
+    margin-bottom: 90px!important;
 }
