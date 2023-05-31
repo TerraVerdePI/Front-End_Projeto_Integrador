@@ -8,10 +8,11 @@ function LadingPage() {
     return (
         <>
             <CarouselHome />
-            <ListaProduto />
+            <ListaProduto exibirBotoes={false} />
             <Perguntas/>
         </>
     )
 }
 
 export default LadingPage
+
