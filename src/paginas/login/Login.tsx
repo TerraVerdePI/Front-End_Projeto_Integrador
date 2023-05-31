@@ -6,7 +6,7 @@ import './Login.css';
 import { UsuarioLogin } from '../../model/UsuarioLogin';
 import { login } from '../../services/Service';
 import { useDispatch } from 'react-redux';
-import { addToken } from '../../store/tokens/actions';
+import { addId, addToken } from '../../store/tokens/actions';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import { Google } from '@mui/icons-material';
@@ -32,6 +32,22 @@ function Login() {
         token: ''
     })
     
+    // state para receber o JSON de conexão do backend
+    const [respUsuarioLogin, setRespUsuarioLogin] = useState<UsuarioLogin>({
+        id: 0,
+        nome: '',
+        usuario: '',
+        senha: '',
+        foto: '',
+        data_nascimento: '',
+        cpf: '',
+        cnpj: '',
+        cep: '', 
+        endereco: '',
+        status_eco: '',
+        token: ''
+    })
+
     function updateModel(event: ChangeEvent<HTMLInputElement>) {
         setUsuarioLogin({
             ...usuarioLogin,
@@ -40,17 +56,19 @@ function Login() {
     }
 
     useEffect(() => {
-        if (token != '') {
-            dispatch(addToken(token))
+        if (respUsuarioLogin.token !== '') {
+            dispatch(addToken(respUsuarioLogin.token))
+            dispatch(addId(respUsuarioLogin.id.toString()))
             navigate('/home')
-
         }
-    }, [token])
+    }, [respUsuarioLogin.token])
 
+     // função que envia o formulário para o backend
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
+        // previne que o formulário atualize a página
         e.preventDefault();
         try {
-            await login(`/usuarios/logar`, usuarioLogin, setToken)
+            await login(`/usuarios/logar`, usuarioLogin, setRespUsuarioLogin)
 
             alert('Usuário logado com sucesso!');
         } catch (error) {

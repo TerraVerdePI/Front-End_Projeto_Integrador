@@ -93,7 +93,7 @@ function Navbar() {
 
     if (token != "") {
 
-        navbarComponent = <AppBar position="static" style={{ backgroundColor: "#595b5a" }}>
+        navbarComponent = <AppBar position="static" style={{ backgroundColor: "#1fb8f5" }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Diversity1Icon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
