@@ -8,8 +8,9 @@ function LadingPage() {
     return (
         <>
             <CarouselHome />
+
             <ListaProduto exibirBotoes={false} />
-            <Perguntas/>
+
         </>
     )
 }

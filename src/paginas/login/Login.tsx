@@ -96,7 +96,7 @@ function Login() {
                 <Typography style={{marginBottom:-5}}>
                     Terra 
                 </Typography>
-                <Typography style={{marginLeft:3}}>
+                <Typography style={{marginLeft:3}} >
                     Verde
                 </Typography>
             </Grid>
