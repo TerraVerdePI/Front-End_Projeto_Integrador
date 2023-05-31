@@ -50,7 +50,7 @@ function ListaProduto({ exibirBotoes = true }) {
       
       />
       <Box display="flex" justifyContent="center">
-      <Grid container spacing={2} xs={8}>
+      <Grid container spacing={2} xs={12} sm={10} md={10} lg={8}>
       {
         produtos
         .filter((produto) => produto.nome.toLowerCase().includes(termoBusca.toLowerCase()))
