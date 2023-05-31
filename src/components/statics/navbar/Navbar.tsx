@@ -34,6 +34,14 @@ const settings = [
         nome: 'Recomendações',
         link: ''
     },
+    {
+        nome: 'Recomendações',
+        link: ''
+    },
+    {
+        nome: 'Recomendações',
+        link: ''
+    },
 ]
 
 const pages = [
