@@ -7,7 +7,6 @@ function LadingPage() {
     return (
         <>
             <CarouselHome />
-            <Perguntas/>
         </>
     )
 }
