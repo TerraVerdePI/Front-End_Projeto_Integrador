@@ -1,0 +1,43 @@
+.container {
+    display: flex;
+  }
+  
+  .column {
+    flex: 1;
+  }
+  
+  .centered-title {
+    text-align: center;
+    padding: 22px 0 ;
+  }
+  
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+  }
+  
+  .card {
+    background-color: white;
+    border: 1px solid gray;
+    padding: 10px;
+  }
+  
+  .yellow-column {
+    flex: 1;
+    background-color: yellow;
+  }
+  
+  .img{
+    flex: 1;
+  }
+  .img{
+    border-radius: 5%;
+    width: 250px;
+    grid-template-columns: repeat(3,1);
+  
+  }
+  
+  .imgDireita {
+    width:550px;
+  }

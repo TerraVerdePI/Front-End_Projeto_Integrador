@@ -1,9 +1,51 @@
 import { AppBar, Toolbar, Box, Typography, Grid, Button } from '@mui/material';
 import './Navbar.css';
 import { Link, useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensReducer';
-import { addToken } from '../../../store/tokens/actions';
+
+import { useDispatch, useSelector } from "react-redux";
+import { TokenState } from "../../../store/tokens/tokensReducer";
+import { addToken } from "../../../store/tokens/actions";
+
+const settings = [
+    {
+        nome: 'Perfil',
+        link: ''
+    },
+    {
+        nome: 'Cadastrar Produto',
+        link: '/formularioProduto'
+    },
+    {
+        nome: 'Cadastrar Categoria',
+        link: '/formularioCategoria'
+    },
+    {
+        nome: 'Recomendações',
+        link: ''
+    },
+]
+
+const pages = [
+    {
+        nome: 'Inicio',
+        link: '/home'
+    },
+    {
+        nome: 'Meus Produtos',
+        link: '/cadastroProduto'
+    },
+    {
+        nome: 'Minhas Categorias',
+        link: '/categorias'
+    },
+    {
+        nome: 'BlogTV',
+        link: ''
+    }
+
+    
+]
+
 
 function Navbar() {
   const token = useSelector<TokenState, TokenState["tokens"]>(

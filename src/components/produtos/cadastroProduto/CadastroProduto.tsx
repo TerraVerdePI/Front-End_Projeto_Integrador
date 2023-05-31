@@ -5,49 +5,35 @@ import {useNavigate, useParams } from 'react-router-dom'
 import Categoria from '../../../model/Categoria';
 import Produto from '../../../model/Produto';
 import { busca, buscaId, post, put } from '../../../services/Service';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import Usuario from '../../../model/Usuario';
+import { addToken } from '../../../store/tokens/actions';
 
 function CadastroProduto() {
-    let navigate = useNavigate();
-    const { id } = useParams<{ id: string }>();
-    const [categorias, setCategorias] = useState<Categoria[]>([])
+    const navigate = useNavigate();
+
     const token = useSelector<TokenState, TokenState["tokens"]>(
         (state) => state.tokens
     );
-    // buscando o id dentro do REDUX
+
     const userId = useSelector<TokenState, TokenState['id']>(
         (state) => state.id
     )
-    const [usuario, setUsuario] = useState<Usuario>({
-        id: +userId,
-        nome: '',
-        usuario: '',
-        senha: '',
-        foto: '',
-        data_nascimento: '',
-        cpf: '',
-        cnpj: '',
-        cep: '',
-        endereco: '',
-        status_eco: ''
+  
+    const dispatch = useDispatch()
 
-    })
+    const { id } = useParams<{ id: string }>();
 
-    useEffect(() => {
-        if (token == "") {
-            alert("Você precisa estar logado")
-            navigate("/login")
+    // buscando o id dentro do REDUX
+    const [categorias, setCategorias] = useState<Categoria[]>([])
 
-        }
-    }, [token])
-
-    const [categoria, setCategoria] = useState<Categoria>(
-        {
-            id: 0,
-            descricao: ''
-        })
+    const [categoria, setCategoria] = useState<Categoria>({
+        id: 0,
+        descricao: '',
+        produto: null
+      });
+    
     const [produto, setProduto] = useState<Produto>({
         id: 0,
         nome: '',
@@ -60,76 +46,109 @@ function CadastroProduto() {
         unidade_de_medida: '',
         quantidade: 0,
         categoria: null,
-        usuario:  null // dono da postagem
-    });
-
-    useEffect(() => { 
-        setProduto({
-            ...produto,
-            categoria: categoria,
-            usuario: usuario 
-        });
-    }, [categoria])
+        usuario: null
+    })
+        
+    const [usuario, setUsuario] = useState<Usuario>({
+        id: +userId,
+        nome: '',
+        usuario: '',
+        senha: '',
+        foto: '',
+        data_nascimento: '',
+        cpf: '',
+        cnpj: '',
+        cep: '',
+        endereco: '',
+        status_eco: '',
+        produto: null
+    })
 
     useEffect(() => {
-        getCategorias()
-        if (id !== undefined) {
-            findById(id)
+
+        if(token === ''){ 
+          alert('Ta tirando né??? sem token não rola')
+          navigate('/login')
         }
-    }, [id])
-
-    async function getCategorias() {
-        await busca("/categorias", setCategorias, {
+      }, [])
+    
+      async function getCategorias() {
+        try {
+          await busca('/categorias', setCategorias, {
             headers: {
-                'Authorization': token
-            }
+
+              Authorization: token,
+            },
+          });
+        } catch (error: any) {
+          if (error.toString().contains('403')) {
+            alert('Token expirado, logue novamente');
+            dispatch(addToken(''))
+            navigate('/login');
+          }
+        }
+      }
+    
+      async function getPostById(id: string) {
+        await busca(`/produtos/${id}`, setProduto, {
+          headers: {
+            Authorization: token
+          }
         })
-    }
-
-    async function findById(id: string) {
-        await buscaId(`/produtos/${id}`, setProduto, {
-            headers: {
-                'Authorization': token
-            }
-        })
-    }
-
-    function updatedProduto(e: ChangeEvent<HTMLInputElement>) {
-
+      }
+    
+      useEffect(() => {
+        getTemas();
+        if(id !== undefined) {
+          getPostById(id)
+        }
+      }, []);
+    
+      function updatedProduto(event: ChangeEvent<HTMLInputElement>) {
         setProduto({
-            ...produto,
-            [e.target.name]: e.target.value,
-            categoria: categoria
-        })
-
-    }
-
-    async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
-        e.preventDefault()
-
+          ...produto,
+          [event.target.name]: event.target.value,
+          categoria: categoria,
+        });
+      }
+    
+      useEffect(() => {
+        setProduto({
+          ...produto,
+          categoria: categoria,
+          usuario: usuario
+        });
+      }, [categoria]);
+    
+      async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
+        event.preventDefault();
+    
         if (id !== undefined) {
-            put(`/produtos`, produto, setProduto, {
-                headers: {
-                    'Authorization': token
-                }
-            })
-            alert('Produto atualizado com sucesso');
+          try {
+            await put('/produtos', produto, setProduto, {
+              headers: {
+                Authorization: token,
+              },
+            });
+            alert('foi - atualização')
+            navigate('/produtos')
+          } catch (error) {
+            alert('deu erro');
+          }
         } else {
-            post(`/produtos`, produto, setProduto, {
-                headers: {
-                    'Authorization': token
-                }
-            })
-            alert('Produto cadastrado com sucesso');
+          try {
+            await post('/produtos', produto, setProduto, {
+              headers: {
+                Authorization: token,
+              },
+            });
+            alert('foi - cadastro')
+            navigate('/produtos')
+          } catch (error) {
+            alert('deu erro');
+          }
         }
-        back()
-
-    }
-
-    function back() {
-        navigate('/produtos')
-    }
-
+      }
     return (
         <Container maxWidth="sm" className="topo">
             <form onSubmit={onSubmit}>
@@ -162,9 +181,10 @@ function CadastroProduto() {
                     </Select>
                     <FormHelperText>Escolha uma categoria para o produto</FormHelperText>
                     <Button type="submit" variant="contained" color="primary">
-                        Finalizar
+                        Publicar Produto
                     </Button>
                 </FormControl>
+                <TextField value={produto.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="descricao" label="Descrição" name="descricao" variant="outlined" margin="normal" fullWidth />
             </form>
         </Container>
     )

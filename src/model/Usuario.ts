@@ -12,7 +12,7 @@ export interface Usuario{
     cep: string,
     endereco: string,
     status_eco: string,
-    produto?: Produto[] //linha adicionada para que o usuário possa ter uma postagem vinculada
+    produto?: Produto[] | null //linha adicionada para que o usuário possa ter uma postagem vinculada
 
 }
 
