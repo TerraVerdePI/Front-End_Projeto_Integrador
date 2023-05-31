@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import Input from '@mui/joy/Input';
 
-function ListaProduto() {
+function ListaProduto({ exibirBotoes = true }) {
   const [produtos, setProdutos] = useState<Produto[]>([])
   let navigate = useNavigate();
   const token = useSelector<TokenState, TokenState["tokens"]>(
@@ -36,9 +36,10 @@ function ListaProduto() {
 
   }, [termoBusca])
 
+
   return (
     <>
-      <div style={{ textAlign: 'center' }}>
+      
       
       <Input placeholder="Buscar Produtos" variant="soft" color="info"
       type="text"
@@ -57,26 +58,50 @@ function ListaProduto() {
         .map(produto => (
           <Grid item xs={12} sm={6} md={4} key={produto.id}>
           <Box m={2} >
-            <Card variant="outlined">
-              <CardContent>
+            <Card variant="outlined" style={{ height: "100%" }}>
+              <CardContent style={{ display: "flex", flexDirection: "column" }}>
                 <Typography color="textSecondary" gutterBottom>
                   Produtos
                 </Typography>
-                <Typography variant="h5" component="h2">
+                <img
+                        src={produto.foto}
+                        alt={produto.nome}
+                        style={{ width: "100%", marginTop: 10, height: 200, objectFit: "cover", marginBottom: 10 }}
+
+                      /> 
+                <Typography style={{textAlign: 'center' }} variant="h5" component="h2">
                   {produto.nome}
                 </Typography>
                 <Typography variant="body2" component="p">
-                  {produto.descricao}
-                </Typography>
+                        {produto.descricao.length > 100 ? produto.descricao.substr(0, 100) + '... ' : produto.descricao}
+                        <Link to={`/produto/${produto.id}`} className="text-decorator-none">
+                          <Typography variant="body2" color="primary">
+                            Saiba mais
+                          </Typography>
+                        </Link>
+                      </Typography>
                 <Typography variant="body2" component="p">
                   {produto.categoria?.descricao}
                 </Typography>
-                <Typography variant="body2" component="p">
-                  Fornecedor: {produto.usuario?.nome}
-                </Typography>
+                <Box display="flex" justifyContent="space-between" alignItems="center">
+                        <Typography variant="body2" component="p">
+                          Preço: {produto.preco}
+                        </Typography>
+                        <Button
+                          variant="contained"
+                          color="primary"
+                        >
+                          Comprar
+                        </Button>
+                      </Box>
+                      <Typography variant="body2" component="p">
+                          Fornecedor: {produto.usuario?.nome}
+                      </Typography>
 
               </CardContent>
+              {exibirBotoes && (
               <CardActions>
+                
                 <Box display="flex" justifyContent="center" mb={1.5}>
 
                   <Link to={`/formularioProduto/${produto.id}`} className="text-decorator-none" >
@@ -94,12 +119,15 @@ function ListaProduto() {
                     </Box>
                   </Link>
                 </Box>
+                
               </CardActions>
+              )}
             </Card>
           </Box>
           </Grid>))
       }
       </Grid>
+      <div className='botao-carregarMais' style={{textAlign: 'center'}}>
       <Button
         variant="contained"
         color="primary"
