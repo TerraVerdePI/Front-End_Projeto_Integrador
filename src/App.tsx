@@ -38,9 +38,9 @@ function App() {
 
           <Route path="/produtos" element={<ListaProduto />} />
 
-          <Route path="/formularioProduto" element={<CadastroProduto />} />
+          <Route path="/cadastroProduto" element={<CadastroProduto />} />
 
-          <Route path="/formularioProduto/:id" element={<CadastroProduto />} />
+          <Route path="/cadastroProduto/:id" element={<CadastroProduto />} />
 
           <Route path="/formularioCategoria" element={<CadastroCategoria />} />
 

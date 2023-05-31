@@ -43,7 +43,7 @@ const pages = [
     },
     {
         nome: 'Meus Produtos',
-        link: '/produtos'
+        link: '/cadastroProduto'
     },
     {
         nome: 'Minhas Categorias',
