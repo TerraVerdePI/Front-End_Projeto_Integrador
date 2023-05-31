@@ -50,7 +50,7 @@ function Home() {
                     <TabProduto />
                 </Grid>
             </Grid>
-            <Perguntas/>
+            
         </>
     );
 }

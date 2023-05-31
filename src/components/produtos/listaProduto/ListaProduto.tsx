@@ -49,8 +49,8 @@ function ListaProduto({ exibirBotoes = true }) {
       size="md"
       
       />
-  
-      <Grid container spacing={2}>
+      <Box display="flex" justifyContent="center">
+      <Grid container spacing={2} xs={8}>
       {
         produtos
         .filter((produto) => produto.nome.toLowerCase().includes(termoBusca.toLowerCase()))
@@ -127,6 +127,7 @@ function ListaProduto({ exibirBotoes = true }) {
           </Grid>))
       }
       </Grid>
+      </Box>
       <div className='botao-carregarMais' style={{textAlign: 'center'}}>
       <Button
         variant="contained"
