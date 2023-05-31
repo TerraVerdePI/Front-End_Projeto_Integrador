@@ -123,10 +123,12 @@ function Navbar() {
                   </Button>
                 </Link>
               </Box>
-              <Box mx={1} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }} onClick={logout}>
+              <Box mx={1} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
+              <Link to="/cadastro">
                 <Button className='botao' color="secondary" variant="contained" style={{ marginLeft: 'auto' }}>
                   Cadastrar
                 </Button>
+              </Link>
               </Box>
             </Grid>
           </Grid>
