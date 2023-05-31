@@ -5,7 +5,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
 import { addToken } from "../../../store/tokens/actions";
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import ShoppingCartSharpIcon from '@mui/icons-material/ShoppingCartSharp';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import AvatarPerfil from './avatarPerfil';
 
 function Navbar() {
   const token = useSelector<TokenState, TokenState["tokens"]>(
@@ -53,13 +55,6 @@ function Navbar() {
               <Link to="/" style={{ textDecoration: 'none' }}>
                 <Box mx={1} style={{ cursor: 'pointer' }}>
                   <Typography variant="h6" className='linha' color="black">
-                    P&R
-                  </Typography>
-                </Box>
-              </Link>
-              <Link to="/" style={{ textDecoration: 'none' }}>
-                <Box mx={1} style={{ cursor: 'pointer' }}>
-                  <Typography variant="h6" className='linha' color="black">
                     BlogTV
                   </Typography>
                 </Box>
@@ -67,12 +62,13 @@ function Navbar() {
             </Box>
             <Grid direction={"row"} display={"flex"}>
               <Box mx={1} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
-                <ShoppingCartIcon />
+                <ShoppingCartSharpIcon color="primary" />
               </Box>
-              <Box mx={1} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }} onClick={logout}>
-                <Button className='botao' color="secondary" variant="contained" style={{ marginLeft: 'auto' }}>
-                  Cadastrar
-                </Button>
+              <Box mx={1} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
+                < NotificationsIcon color="primary" />
+              </Box>
+              <Box mx={1} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
+                <AvatarPerfil />
               </Box>
             </Grid>
           </Grid>
