@@ -13,10 +13,6 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay]);
 import './CarouselHome.css';
 import { Link } from 'react-router-dom';
 
-import Banner1 from '../../assets/ladingPage/Banner1.jpg'
-import Banner2 from '../../assets/ladingPage/Banner2.jpg'
-import Banner3 from '../../assets/ladingPage/Banner3.jpg'
-
 function CarouselHome() {
 
     return (
@@ -32,14 +28,14 @@ function CarouselHome() {
         >
             <SwiperSlide className='slide-item'>
                 <Link to='/'>
-                <img src={Banner1} alt="" width="500px" height="300px" />
+                <img src="https://i.imgur.com/LJ3rGAM.jpg" alt="" width="500px" height="300px" />
                 </Link>
             </SwiperSlide>
             <SwiperSlide className='slide-item'>
-                <img src={Banner2} alt="" width="500px" height="300px" />
+                <img src="https://i.imgur.com/RPjSdDQ.jpg" alt="" width="500px" height="300px" />
             </SwiperSlide>
             <SwiperSlide className='slide-item'>
-                <img src={Banner3} alt="" width="500px" height="300px" />
+                <img src="https://i.imgur.com/TM9AF51.jpg" alt="" width="500px" height="300px" />
             </SwiperSlide>
 
         </Swiper>
