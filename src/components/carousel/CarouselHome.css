@@ -1,16 +1,15 @@
-.swiper-container{
+.swiper-container {
     margin-top: 10px;
-    width: 834px;
-    height: 469px;
     margin-bottom: 50px;
 }
-.slide-item{
-    width: 834px;
-    height: 469px;
+
+.slide-item {
+    width: 100%;
+    height: 50vh;
 }
 
 .slide-item img {
     height: 100%;
-    object-fit: cover;
     width: 100%;
+    object-fit: cover;
 }

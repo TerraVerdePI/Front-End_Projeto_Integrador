@@ -13,3 +13,11 @@
     background-color: rgb(138, 138, 138);
     border-radius: 10px;
 }
+
+.titulo-perguntas{
+    margin-bottom: 25px!important;
+}
+
+.sub-titulo-perguntas{
+    padding-right: 10px;
+}

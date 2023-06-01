@@ -10,25 +10,18 @@ import { Box, Grid } from '@material-ui/core'
 function LadingPage() {
     return (
         <>
-            <Grid container direction='row' justifyContent='center'>
-            <Box >
-                <Grid item xs className='large'>
+            
             <CarouselHome />
-            </Grid>
-            </Box>
-            <Box>
+            
+          
             <ListaProduto exibirBotoes={false} />
-            </Box>
-            <Box>
+            
             <Parceiros />
-            </Box>
-            <Box>
+           
             <Sobre />
-            </Box>
-            <Box>
+            
             <Perguntas />
-            </Box>
-            </Grid>
+          
         </>
     )
 }

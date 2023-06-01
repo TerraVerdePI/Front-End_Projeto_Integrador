@@ -38,6 +38,6 @@ function Sobre() {
             </Grid>
         </>
     )
-}
+} 
 
 export default Sobre
