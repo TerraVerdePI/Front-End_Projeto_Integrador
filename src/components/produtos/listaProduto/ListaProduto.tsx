@@ -36,6 +36,9 @@ function ListaProduto({ exibirBotoes = true }) {
 
   }, [termoBusca])
 
+  const handleProdutoClick = (produtoId: number) => {
+    navigate(`/produtos/${produtoId}`);
+  };
 
   return (
     <>
@@ -74,8 +77,8 @@ function ListaProduto({ exibirBotoes = true }) {
                 </Typography>
                 <Typography variant="body2" component="p">
                         {produto.descricao.length > 100 ? produto.descricao.substr(0, 100) + '... ' : produto.descricao}
-                        <Link to={`/produto/${produto.id}`} className="text-decorator-none">
-                          <Typography variant="body2" color="primary">
+                        <Link to={`/produtos/${produto.id}`} className="text-decorator-none">
+                          <Typography variant="body2" color="primary" >
                             Saiba mais
                           </Typography>
                         </Link>
