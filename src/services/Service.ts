@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const api = axios.create({
-    baseURL: 'https://terraverde.onrender.com/' // coloque aqui o url do back end
+    baseURL: import.meta.env.VITE_API_URL // coloque aqui o url do back end
 })
 
 export const cadastroUsuario = async(url: any,dados: any,setDados: any) => { 
