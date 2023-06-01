@@ -1,9 +1,11 @@
 .swiper-container{
-    height: 50vh;
+    margin-top: 10px;
+    width: 834px;
+    height: 469px;
 }
-
 .slide-item{
-    margin: 5px;
+    width: 834px;
+    height: 469px;
 }
 
 .slide-item img {

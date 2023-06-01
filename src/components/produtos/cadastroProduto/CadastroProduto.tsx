@@ -20,6 +20,7 @@ function CadastroProduto() {
     const userId = useSelector<TokenState, TokenState['id']>(
         (state) => state.id
     )
+  
     const dispatch = useDispatch()
 
     const { id } = useParams<{ id: string }>();
@@ -64,6 +65,7 @@ function CadastroProduto() {
     })
 
     useEffect(() => {
+
         if(token === ''){ 
           alert('Ta tirando né??? sem token não rola')
           navigate('/login')
@@ -74,6 +76,7 @@ function CadastroProduto() {
         try {
           await busca('/categorias', setCategorias, {
             headers: {
+
               Authorization: token,
             },
           });
@@ -149,6 +152,7 @@ function CadastroProduto() {
     return (
         <Container maxWidth="md" className="topo">
             <form onSubmit={onSubmit}>
+
                 <Typography variant="h4" color="textSecondary" component="h1" align="center" >MEUS PRODUTOS/CADASTRO</Typography>
                 <div style={{display:'flex'}}>
                 <div className="perfilBanner">
@@ -160,6 +164,7 @@ function CadastroProduto() {
                 <TextField className='size' value={produto.quantidade} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="quantidade" label="Quantidade" name="quantidade" variant="outlined" margin="normal" fullWidth />
                 <TextField className='size' value={produto.preco} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="preco" label="Preço Unitário" name="preco" variant="outlined" margin="normal" fullWidth/>
                 <TextField className='sizeLast' value={produto.unidade_de_medida} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="unidade_de_medida" label="Unidade de Medida" name="unidade_de_medida" variant="outlined" margin="normal" fullWidth/>
+
                 <FormControl >
                     <InputLabel id="demo-simple-select-helper-label">Categoria </InputLabel>
                     <Select

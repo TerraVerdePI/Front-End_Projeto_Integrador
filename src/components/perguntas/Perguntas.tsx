@@ -1,13 +1,53 @@
 import * as React from 'react';
-import Accordion from '@mui/material/Accordion';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { Grid } from '@mui/material';
+import { Box, Grid, styled } from '@mui/material';
+import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
+import MuiAccordion, { AccordionProps } from '@mui/material/Accordion';
+import MuiAccordionSummary, {
+  AccordionSummaryProps,
+} from '@mui/material/AccordionSummary';
+import MuiAccordionDetails from '@mui/material/AccordionDetails';
+import './Perguntas.css';
 
-export default function ControlledAccordions() {
-  const [expanded, setExpanded] = React.useState<string | false>(false);
+const Accordion = styled((props: AccordionProps) => (
+  <MuiAccordion disableGutters elevation={0} square {...props} />
+))(({ theme }) => ({
+  border: `1px solid ${theme.palette.divider}`,
+  '&:not(:last-child)': {
+    borderBottom: 0,
+  },
+  '&:before': {
+    display: 'none',
+  },
+}));
+
+const AccordionSummary = styled((props: AccordionSummaryProps) => (
+  <MuiAccordionSummary
+    expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem' }} />}
+    {...props}
+  />
+))(({ theme }) => ({
+  backgroundColor:
+    theme.palette.mode === 'dark'
+      ? 'rgba(255, 255, 255, .05)'
+      : 'rgba(0, 0, 0, .03)',
+  flexDirection: 'row-reverse',
+  '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
+    transform: 'rotate(90deg)',
+  },
+  '& .MuiAccordionSummary-content': {
+    marginLeft: theme.spacing(1),
+  },
+}));
+
+const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
+  padding: theme.spacing(2),
+  borderTop: '1px solid rgba(0, 0, 0, .125)',
+}));
+
+export default function CustomizedAccordions() {
+  const [expanded, setExpanded] = React.useState<string | false>('panel1');
 
   const handleChange =
     (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
@@ -16,8 +56,10 @@ export default function ControlledAccordions() {
 
   return (
       <Grid container direction={'row'} display={'flex'} justifyContent={'center'} alignItems={'center'} >
-        <Grid item xs={8}>
-      <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+        <Grid xs={8} className="background">
+          <Grid item>
+            <Box className='margin'>
+      <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} className="border">
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1bh-content"
@@ -36,9 +78,11 @@ export default function ControlledAccordions() {
           </Typography>
         </AccordionDetails>
       </Accordion>
+      </Box>
       </Grid>
         <Grid item>
-      <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
+        <Box className='margin'>
+      <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')} className="border">
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel2bh-content"
@@ -46,7 +90,7 @@ export default function ControlledAccordions() {
         >
           <Typography sx={{ width: '33%', flexShrink: 0 }}>Entrega</Typography>
           <Typography sx={{ color: 'text.secondary' }}>
-           Como é feita a entrega dos produtos?
+          Como é feita a entrega dos produtos?
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -55,9 +99,11 @@ export default function ControlledAccordions() {
           </Typography>
         </AccordionDetails>
       </Accordion>
+      </Box>
       </Grid>
       <Grid item>
-      <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+      <Box className='margin'>
+      <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')} className="border">
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel3bh-content"
@@ -76,9 +122,11 @@ export default function ControlledAccordions() {
           </Typography>
         </AccordionDetails>
       </Accordion>
+      </Box>
       </Grid>
       <Grid item>
-      <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
+      <Box className='margin'>
+      <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')} className="border">
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel4bh-content"
@@ -95,6 +143,8 @@ export default function ControlledAccordions() {
           </Typography>
         </AccordionDetails>
       </Accordion>
+      </Box>
+      </Grid>
       </Grid>
       </Grid>
   );

@@ -1,9 +1,21 @@
-#cursor{
-    cursor: pointer;
-    color: white;
+.botao{
+    background-color: white!important;
+    color:black!important;
 }
-
-.text-decorator-none{
-    text-decoration: none;
+.botao2{
+    background-color: white!important;
+    color:black!important;
     
 }
+.imagem {
+    width: 120px; /* Defina o tamanho desejado para a largura */
+    height: auto; /* A altura será ajustada automaticamente proporcionalmente à largura */
+  }
+  .navbar{
+    background-color: rgba(0, 0, 0, 0)!important;
+
+  }
+  .linha:hover {
+    color: white;
+  }
+  .fonte{}

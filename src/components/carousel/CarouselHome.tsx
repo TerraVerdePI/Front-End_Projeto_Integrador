@@ -13,7 +13,9 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay]);
 import './CarouselHome.css';
 import { Link } from 'react-router-dom';
 
-import banner1 from '../../assets/frutasHome.png';
+import Banner1 from '../../assets/ladingPage/Banner1.jpg'
+import Banner2 from '../../assets/ladingPage/Banner 2.jpg'
+import Banner3 from '../../assets/ladingpage/Banner 3.jpg'
 
 function CarouselHome() {
 
@@ -30,14 +32,14 @@ function CarouselHome() {
         >
             <SwiperSlide className='slide-item'>
                 <Link to='/'>
-                <img src={banner1} alt="" width="500px" height="300px" />
+                <img src={Banner1} alt="" width="500px" height="300px" />
                 </Link>
             </SwiperSlide>
             <SwiperSlide className='slide-item'>
-                <img src="https://images.unsplash.com/photo-1461354464878-ad92f492a5a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="" width="500px" height="300px" />
+                <img src={Banner2} alt="" width="500px" height="300px" />
             </SwiperSlide>
             <SwiperSlide className='slide-item'>
-                <img src="https://images.unsplash.com/photo-1555243896-c709bfa0b564?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="" width="500px" height="300px" />
+                <img src={Banner3} alt="" width="500px" height="300px" />
             </SwiperSlide>
 
         </Swiper>
