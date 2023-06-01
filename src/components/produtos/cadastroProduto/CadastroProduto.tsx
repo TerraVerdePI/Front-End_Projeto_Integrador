@@ -34,7 +34,7 @@ function CadastroProduto() {
       });
     
     const [produto, setProduto] = useState<Produto>({
-        id: 0,
+        id: +userId,
         nome: '',
         descricao: '',
         foto: '',
@@ -49,7 +49,7 @@ function CadastroProduto() {
     })
         
     const [usuario, setUsuario] = useState<Usuario>({
-        id: +userId,
+        id: 0,
         nome: '',
         usuario: '',
         senha: '',
@@ -70,7 +70,7 @@ function CadastroProduto() {
         }
       }, [])
     
-      async function getTemas() {
+      async function getCategorias() {
         try {
           await busca('/categorias', setCategorias, {
             headers: {
@@ -95,7 +95,7 @@ function CadastroProduto() {
       }
     
       useEffect(() => {
-        getTemas();
+        getCategorias();
         if(id !== undefined) {
           getPostById(id)
         }
@@ -147,13 +147,19 @@ function CadastroProduto() {
         }
       }
     return (
-        <Container maxWidth="sm" className="topo">
+        <Container maxWidth="md" className="topo">
             <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >MEUS PRODUTOS/CADASTRO</Typography>
-                <TextField value={produto.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="nome" label="Nome do Produto" variant="outlined" name="nome" margin="normal" fullWidth />
-                <TextField value={produto.quantidade} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="quantidade" label="Quantidade" name="quantidade" variant="outlined" margin="normal" fullWidth />
-                <TextField value={produto.unidade_de_medida} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="unidade_de_medida" label="Unidade de Medida" variant="outlined" name="unidade" margin="normal" fullWidth />
-                <TextField value={produto.preco} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="preco" label="Preço Unitário" name="preco" variant="outlined" margin="normal" fullWidth />
+                <Typography variant="h4" color="textSecondary" component="h1" align="center" >MEUS PRODUTOS/CADASTRO</Typography>
+                <div style={{display:'flex'}}>
+                <div className="perfilBanner">
+                <img src={produto.foto} alt={`Foto do produto ${produto.nome}`} />
+                </div>
+                <div className='txtField'>
+                <TextField  name="foto" label="URL da Foto" value={produto.foto} onChange={(event: ChangeEvent<HTMLInputElement>) =>updatedProduto(event)} variant="outlined" margin="normal" fullWidth/>
+                <TextField  value={produto.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="nome" label="Nome do Produto" variant="outlined" name="nome" margin="normal" fullWidth />
+                <TextField className='size' value={produto.quantidade} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="quantidade" label="Quantidade" name="quantidade" variant="outlined" margin="normal" fullWidth />
+                <TextField className='size' value={produto.preco} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="preco" label="Preço Unitário" name="preco" variant="outlined" margin="normal" fullWidth/>
+                <TextField className='sizeLast' value={produto.unidade_de_medida} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="unidade_de_medida" label="Unidade de Medida" name="unidade_de_medida" variant="outlined" margin="normal" fullWidth/>
                 <FormControl >
                     <InputLabel id="demo-simple-select-helper-label">Categoria </InputLabel>
                     <Select
@@ -171,12 +177,18 @@ function CadastroProduto() {
                         }
                     </Select>
                     <FormHelperText>Escolha uma categoria para o produto</FormHelperText>
-                    <Button type="submit" variant="contained" color="primary">
-                        Publicar Produto
-                    </Button>
                 </FormControl>
-                <TextField value={produto.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="descricao" label="Descrição" name="descricao" variant="outlined" margin="normal" fullWidth />
+                </div>
+                </div>
+                
+                <TextField className='descricao' value={produto.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="descricao" label="Descrição" name="descricao" variant="outlined" margin="normal" fullWidth />
+                <Button type="submit" variant="contained" color="primary" fullWidth disabled={categoria.id === 0}>
+            {id !== undefined ? 'Atualizar Postagem' : 'Cadastrar Postagem'}
+          </Button>
             </form>
+            <div className='space'>
+
+            </div>
         </Container>
     )
 }

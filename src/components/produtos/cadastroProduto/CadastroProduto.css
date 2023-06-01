@@ -1,3 +1,32 @@
 .topo{
     margin-top: 20px;
 }
+
+.perfilBanner img {
+    width: 10vw;
+    aspect-ratio: 1;
+    border-radius: 10%;
+    border: 2px solid black;
+    padding: 3px;
+}
+
+.txtField{
+    margin-left: 15px;
+}
+
+.size{
+    width: 220px!important;
+    margin-right: 60px!important;
+    
+}
+.descricao{
+    height: 200px!important;
+
+}
+.sizeLast{
+    width: 220px!important;
+}
+
+.space{
+    height: 200px!important;
+}
