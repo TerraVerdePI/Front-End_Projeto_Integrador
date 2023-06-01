@@ -49,7 +49,7 @@ function CadastroProduto() {
     });
 
         const [produto, setProduto] = useState<Produto>({
-          id: +userId,
+          id: 0,
           nome: '',
           descricao: '',
           foto: '',
@@ -64,7 +64,7 @@ function CadastroProduto() {
       })
 
     const [usuario, setUsuario] = useState<Usuario>({
-      id: 0,
+      id: +userId,
       nome: '',
       usuario: '',
       senha: '',
