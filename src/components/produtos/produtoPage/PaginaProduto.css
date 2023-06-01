@@ -1,0 +1,25 @@
+.product-image {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 300px;
+}
+
+.product-image img {
+    width: 400px;
+    height: 400px; /* Tamanho desejado para a imagem */
+    object-fit: cover; /* Para manter a proporção da imagem */
+    border-radius: 30px;
+}
+
+.text-container{
+    margin-top: 50px;
+    margin-bottom: 300px;
+}
+
+.btn-comprar{
+    color: rgb(0, 2, 1);
+    background-color: rgb(2, 250, 250);
+    margin-right: 10px;
+}
+
