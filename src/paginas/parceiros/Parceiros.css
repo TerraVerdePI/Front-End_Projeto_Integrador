@@ -1,14 +1,24 @@
 .container {
     display: flex;
+    
   }
   
   .column {
     flex: 1;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
   
   .centered-title {
     text-align: center;
-    padding: 22px 0 ;
+    padding: 22px;
+  }
+
+  .textoParceiro{
+    margin-top: 20px;
+    font-size: 17px;
+    margin-left: 20px;
+    padding-right: 20px;
   }
   
   .card-grid {
@@ -31,13 +41,31 @@
   .img{
     flex: 1;
   }
-  .img{
+
+  .img {
+    width: 140px;
+    margin-left: 20px;
+    aspect-ratio: 1;
+    border-radius: 5%;
+    border: 2px solid rgba(1, 65, 43, 0.521);
+    grid-template-columns: repeat(3,1)!important;
+    padding: 2px;
+    box-shadow: 4px 4px 3px rgba(44, 44, 44, 0.3);
+
+  }
+  /* .img{
     border-radius: 5%;
     width: 250px;
     grid-template-columns: repeat(3,1);
   
-  }
+  } */
   
   .imgDireita {
-    width:550px;
+    width:500px;
+    aspect-ratio: 1;
+    border-radius: 5%;
+    border: 2px solid rgba(1, 65, 43, 0.521);
+    grid-template-columns: repeat(3,1)!important;
+    padding: 2px;
+    box-shadow: 4px 4px 3px rgba(44, 44, 44, 0.3);
   }

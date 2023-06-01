@@ -5,7 +5,7 @@ import './Sobre.css';
 function Sobre() {
     return (
         <>
-            <Box>
+            <Box display='flex' alignItems='center' style={{marginTop:'30px'}}>
                 <Typography variant='h4' gutterBottom color='textPrimary' component='h4' align='center' style={{ fontWeight: 'bold' }}>
                     Sobre o Terra Verde.com
                 </Typography>
@@ -23,14 +23,14 @@ function Sobre() {
                 <Grid item xs={7} alignItems={'center'}>
                     <Box paddingX={10} className="margin">
 
-                        <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' style={{ fontWeight: 'bold' }}>A Missão do Terra Verde</Typography>
-                        <Typography variant='h6' gutterBottom color='textPrimary' component='h3' align='center' style={{ fontWeight: 'bold' }}> Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis et nemo laudantium numquam esse omnis unde voluptas. Exercitationem ullam quibusdam modi tenetur iure in quidem et, nihil sunt, totam dolor. </Typography>
+                        <Typography variant='h5' gutterBottom color='textPrimary' component='h5' align='center' className='textTitle'>A Missão do Terra Verde</Typography>
+                        <Typography  gutterBottom  align='center' className='textStyle'> Nossa missão é conectar produtores agrícolas, consumidores conscientes e ONGs comprometidas com a sustentabilidade. Eliminamos intermediários tradicionais para oferecer produtos agrícolas de alta qualidade a preços acessíveis. Valorizamos alimentos "fora do padrão" que são desperdiçados pelas grandes redes de supermercados, dando-lhes a oportunidade de chegar até você. Além disso, proporcionamos cursos de agricultura sustentável, promovendo conhecimentos valiosos sobre práticas agrícolas responsáveis. Oferecemos opções de compra online e retirada pessoal, garantindo conveniência aos usuários. Junte-se a nós para fortalecer a comunidade, reduzir o desperdício de alimentos e promover uma economia local justa. Junte-se à essa causa e faça parte dessa mudança! </Typography>
 
                     </Box>
                     <Box paddingX={10} className="margin">
 
-                        <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' style={{ fontWeight: 'bold' }}>Quem Somos Nos?</Typography>
-                        <Typography variant='h6' gutterBottom color='textPrimary' component='h3' align='center' style={{ fontWeight: 'bold' }}> Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis et nemo laudantium numquam esse omnis unde voluptas. Exercitationem ullam quibusdam modi tenetur iure in quidem et, nihil sunt, totam dolor. </Typography>
+                        <Typography variant='h5' gutterBottom  align='center' className='textTitle'>Quem Somos Nos?</Typography>
+                        <Typography  gutterBottom   align='center' className='textStyle'> Bem-vindo à nossa plataforma de E-commerce agrícola. Conectamos produtores e consumidores, eliminando intermediários. Aqui, você pode adquirir produtos agrícolas de alta qualidade diretamente dos produtores, a preços acessíveis. Valorizamos alimentos "fora do padrão" que estão em perfeitas condições de consumo. Além disso, oferecemos cursos de agricultura sustentável, proporcionando conhecimentos valiosos sobre práticas agrícolas responsáveis. Compras online com entrega em casa ou retirada pessoal estão disponíveis. Junte-se a nós para fortalecer a comunidade entre agricultores, consumidores conscientes e ONGs comprometidas com a sustentabilidade e a redução do desperdício de alimentos. Faça parte dessa iniciativa por uma economia local justa e um estilo de vida sustentável. </Typography>
 
                     </Box>
                 </Grid>

@@ -5,10 +5,9 @@ import './Perfil.css';
 import { Grid, Typography, Avatar, Box, Button, Accordion, AccordionDetails, AccordionSummary, TextField, } from '@mui/material';
 import { Link } from 'react-router-dom';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import User from '../../models/User';
+import User from '../../model/Usuario';
 import { buscaId, post, put } from '../../services/Service';
 import { toast } from 'react-toastify';
-import Cards from '../../componentes/estaticos/cards/Cards';
 
 function Perfil() {
   const token = useSelector<TokenState, TokenState['tokens']>(
@@ -17,12 +16,18 @@ function Perfil() {
   const userId = useSelector<TokenState, TokenState['id']>((state) => state.id);
 
   const [usuario, setUsuario] = useState<User>({
-    id: +userId,
-    foto: '',
-    nome: '',
-    usuario: '',
-    senha: '',
-    postagem: null,
+      id: +userId,
+      nome: '',
+      usuario: '',
+      senha: '',
+      foto: '',
+      data_nascimento: '',
+      cpf: '',
+      cnpj: '',
+      cep: '',
+      endereco: '',
+      status_eco: '',
+      produto: null
   });
 
   async function getUsuario() {
@@ -116,25 +121,23 @@ function Perfil() {
     <div className="perfilContainer">
       <div className="perfilBanner">
         <div>
-          <h2>Perfil de: {usuario.nome}</h2>
+          <h2>{usuario.nome}</h2>
           <p>{usuario.usuario}</p>
-          <p>Total de postagens feitas: {usuario.postagem?.length}</p>
+          <p>Total de produtos anunciados: {usuario.produto?.length}</p>
         </div>
         <img src={usuario.foto} alt={`Foto de perfil de ${usuario.nome}`} />
       </div>
+      
       <div className="perfilUpdate">
-        <Accordion>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel1a-content"
-            id="panel1a-header"
-          >
-            <Typography variant="h5" style={{ margin: '0 auto' }}>
+
+            
+
+            <form onSubmit={atualizar}>
+            <div style={{display:'flex', justifyContent:'center', margin:'25px'}}>
+      <Typography variant="h5">
               Atualizar Perfil
             </Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <form onSubmit={atualizar}>
+            </div>
               <Box
                 display={'flex'}
                 width={'100%'}
@@ -184,53 +187,11 @@ function Perfil() {
                     confirmSenha(event)
                   }
                 />
-              <Button fullWidth variant={'contained'} type='submit'>Atualizar</Button>
+              <Button fullWidth variant={'contained'} type='submit' style={{marginTop:'30px'}}>Atualizar</Button>
               </Box>
             </form>
-          </AccordionDetails>
-        </Accordion>
+      </div>    
       </div>
-      <hr />
-      <h3 style={{ textAlign: 'center' }}>Suas postagens</h3>
-      <div className="perfilPosts">
-        {usuario.postagem?.map((posts) => (
-          <Grid
-            item
-            border={1}
-            borderRadius={2}
-            borderColor={'lightgray'}
-            p={2}
-          >
-            <Typography>Postagem:</Typography>
-            <Typography>{posts.titulo}</Typography>
-            <Typography>{posts.texto}</Typography>
-            <Avatar
-              src={usuario.foto}
-              style={{ border: '1px solid black' }}
-              alt=""
-            />
-            <Typography>
-              {new Intl.DateTimeFormat('pt-br', {
-                dateStyle: 'full',
-              }).format(new Date(posts.data))}
-            </Typography>
-            <Typography>Tema: {posts.tema?.descricao}</Typography>
-            <Box display={'flex'} gap={4}>
-              <Link to={`/formularioPostagem/${posts.id}`}>
-                <Button fullWidth variant="contained" color="primary">
-                  editar
-                </Button>
-              </Link>
-              <Link to={`/apagarPostagem/${posts.id}`}>
-                <Button fullWidth variant="contained" color="secondary">
-                  apagar
-                </Button>
-              </Link>
-            </Box>
-          </Grid>
-        ))}
-      </div>
-    </div>
   );
 }
 
