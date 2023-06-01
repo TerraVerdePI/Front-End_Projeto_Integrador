@@ -3,6 +3,7 @@ import { styled } from '@mui/material/styles';
 import Badge from '@mui/material/Badge';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
+import { Link } from 'react-router-dom';
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
@@ -41,7 +42,9 @@ export default function BadgeAvatars() {
                 anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
                 variant="dot"
             >
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                <Link to={'/perfil'} style={{textDecoration:'none'}}>
+                <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg"/>
+                </Link>
             </StyledBadge>
         </Stack>
     );
