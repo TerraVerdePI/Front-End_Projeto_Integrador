@@ -14,8 +14,8 @@ import './CarouselHome.css';
 import { Link } from 'react-router-dom';
 
 import Banner1 from '../../assets/ladingPage/Banner1.jpg'
-import Banner2 from '../../assets/ladingPage/Banner 2.jpg'
-import Banner3 from '../../assets/ladingpage/Banner 3.jpg'
+import Banner2 from '../../assets/ladingPage/Banner2.jpg'
+import Banner3 from '../../assets/ladingPage/Banner3.jpg'
 
 function CarouselHome() {
 
