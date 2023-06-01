@@ -1,12 +1,22 @@
 .img1{
     border-radius: 60px!important;
-    scale: 0.9!important;
+    scale: 0.7!important;
 }
 .img2{
     border-radius: 40px!important;
-    scale: 1.4!important;
+    scale: 1.8!important;
     margin: 60px!important;
 }
 .margin{
-    margin-bottom: 90px!important;
+    margin-bottom: 40px!important;
+    margin-top: 90px!important;
+}
+
+.textStyle{
+    text-align: justify!important;
+}
+
+.textTitle{
+    font-weight: 600!important;
+    margin-bottom: 15px!important;
 }

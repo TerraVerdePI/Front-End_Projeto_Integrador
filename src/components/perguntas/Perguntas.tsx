@@ -55,20 +55,24 @@ export default function CustomizedAccordions() {
     };
 
   return (
+    
       <Grid container direction={'row'} display={'flex'} justifyContent={'center'} alignItems={'center'} >
+        <Grid>
+          Perguntas Frequentes
+        </Grid>
         <Grid xs={8} className="background">
           <Grid item>
-            <Box className='margin'>
+            <Box className='marginQna'>
       <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} className="border">
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1bh-content"
           id="panel1bh-header"
         >
-          <Typography sx={{ width: '33%', flexShrink: 0 }}>
+          <Typography >
             Qualidade
           </Typography>
-          <Typography sx={{ color: 'text.secondary' }}>
+          <Typography sx={{ color: 'text.secondary'}}>
             Como é feito o controle de qualidade dos produtos comercializados na plataforma?
           </Typography>
         </AccordionSummary>
@@ -81,20 +85,20 @@ export default function CustomizedAccordions() {
       </Box>
       </Grid>
         <Grid item>
-        <Box className='margin'>
+        <Box className='marginQna'>
       <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')} className="border">
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel2bh-content"
           id="panel2bh-header"
         >
-          <Typography sx={{ width: '33%', flexShrink: 0 }}>Entrega</Typography>
+          <Typography sx={{ width: '30%'}}>Entrega</Typography>
           <Typography sx={{ color: 'text.secondary' }}>
           Como é feita a entrega dos produtos?
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography >
           A entrega dos produtos é feita de acordo com o combinado entre cliente final e produtor. Nesse caso, as opções de entrega são flexíveis e podem ser personalizadas para atender às necessidades específicas do cliente, podendo ser: Encontro Presencial; Correios/Transportadora; Frete Terceirizado.
           </Typography>
         </AccordionDetails>
@@ -102,22 +106,22 @@ export default function CustomizedAccordions() {
       </Box>
       </Grid>
       <Grid item>
-      <Box className='margin'>
+      <Box className='marginQna'>
       <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')} className="border">
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel3bh-content"
           id="panel3bh-header"
         >
-          <Typography sx={{ width: '33%', flexShrink: 0 }}>
+          <Typography >
             Pagamento
           </Typography>
-          <Typography sx={{ color: 'text.secondary' }}>
+          <Typography sx={{ color: 'text.secondary' }} >
             O pagamento é feito através da plataforma?
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography sx={{ color: 'text.secondary' }}>
             Apesar de ser uma plataforma e-commerce, nós do Terra Verde não efetuamos transações financeiras, deixando a cargo dos envolvidos na negociação a decisão da melhor forma de pagamento. Com tudo, indicamos alguns mecanismos seguros como MercadoPago e PayPal. 
           </Typography>
         </AccordionDetails>
@@ -125,14 +129,14 @@ export default function CustomizedAccordions() {
       </Box>
       </Grid>
       <Grid item>
-      <Box className='margin'>
+      <Box className='marginQna'>
       <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')} className="border">
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel4bh-content"
           id="panel4bh-header"
         >
-          <Typography sx={{ width: '33%', flexShrink: 0 }}>Segurança</Typography>
+          <Typography>Segurança</Typography>
           <Typography sx={{ color: 'text.secondary' }}>
             Como saber se o produto que estou comprando vem de um vendedor confiável?
           </Typography>

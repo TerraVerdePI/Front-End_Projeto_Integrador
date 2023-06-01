@@ -7,7 +7,7 @@ import { TokenState } from "../../../store/tokens/tokensReducer";
 import { addToken } from "../../../store/tokens/actions";
 import ShoppingCartSharpIcon from '@mui/icons-material/ShoppingCartSharp';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import AvatarPerfil from './avatarPerfil';
+import AvatarPerfil from './AvatarPerfil';
 
 function Navbar() {
   const token = useSelector<TokenState, TokenState["tokens"]>(

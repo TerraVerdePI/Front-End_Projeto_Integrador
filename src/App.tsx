@@ -16,6 +16,8 @@ import { Provider } from 'react-redux';
 import store from './store/store';
 import LadingPage from './paginas/ladingPage/LadingPage';
 import PaginaProduto from './components/produtos/produtoPage/PaginaProduto';
+import Perfil from './paginas/perfil/Perfil';
+import Sobre from './paginas/sobre/Sobre';
 
 function App() {
   return (
@@ -32,6 +34,10 @@ function App() {
           <Route path='/login' element={<Login />} />
 
           <Route path='/home' element={<Home />} />
+
+          <Route path='/perfil' element={<Perfil />} />
+
+          <Route path='/sobre' element={<Sobre />} />
 
           <Route path="/cadastro" element={<CadastroUsuario />} />
 

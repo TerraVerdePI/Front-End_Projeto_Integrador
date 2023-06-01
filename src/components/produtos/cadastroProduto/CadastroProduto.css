@@ -12,12 +12,18 @@
 
 .txtField{
     margin-left: 15px;
+    
 }
 
+.buttonPost{
+    margin-top: 120px!important;
+}
+
+.boxText{
+    justify-content: space-between!important;
+}
 .size{
-    width: 220px!important;
-    margin-right: 60px!important;
-    
+    width: 220px!important;   
 }
 .descricao{
     height: 200px!important;
