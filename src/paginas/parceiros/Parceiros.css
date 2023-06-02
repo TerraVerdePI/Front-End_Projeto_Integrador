@@ -1,13 +1,13 @@
 .container {
   display: flex;
-  flex-wrap: wrap; /* Adicionado para permitir que os elementos sejam ajustados quando o espaço não for suficiente */
+  flex-wrap: wrap;
 }
 
 .column {
   flex: 1;
   justify-content: flex-start;
   align-items: flex-start;
-  min-width: 300px; /* Adicionado para evitar que a coluna fique muito estreita */
+  min-width: 300px;
 }
 
 .centered-title {
@@ -22,11 +22,12 @@
   padding-right: 20px;
 }
 
-/* .card-grid {
+.card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 10px;
-} */
+  margin-bottom: 20px; /* Add margin-bottom to create space between card-grid and textoParceiro */
+}
 
 .card {
   background-color: white;
@@ -51,11 +52,6 @@
   border: 2px solid rgba(1, 65, 43, 0.521);
   padding: 2px;
   box-shadow: 4px 4px 3px rgba(44, 44, 44, 0.3);
-}
-
-.card-grid {
-  display: grid;
-  grid-gap: 10px;
 }
 
 @media (min-width: 768px) {

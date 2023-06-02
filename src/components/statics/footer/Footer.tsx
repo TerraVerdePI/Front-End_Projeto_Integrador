@@ -26,16 +26,16 @@ e de qualidade a preços acessíveis</Typography>
                 </Box>
                 <Box display="flex" alignItems="center" justifyContent="center">
                     <a href="https://linktr.ee/Terra_Verde" target="_blank">
-                        <img src="https://i.imgur.com/tlZGgqM.png" style={{ fontSize: 60, color: "white", width:"40px",padding:3 }} />
+                        <img src="https://i.imgur.com/tATQQis.png" style={{ fontSize: 60, color: "white", width:"40px",padding:3 }} />
                     </a>
                     <a href="https://www.instagram.com/terraverdepi/" target="_blank">
-                        <img src="https://i.imgur.com/29COrY3.png" style={{ fontSize: 60, color: "white", width:"40px",padding:3}} />
+                        <img src="https://i.imgur.com/PO8txgt.png" style={{ fontSize: 60, color: "white", width:"40px",padding:3}} />
                     </a>
                     <a href="https://linktr.ee/TerraVerdee" target="_blank">
-                        <img src="https://i.imgur.com/vQHX1kx.png"style={{ fontSize: 60, color: "white", width:"40px",padding:3 }} />
+                        <img src="https://i.imgur.com/YNyoOOx.png"style={{ fontSize: 60, color: "white", width:"40px",padding:3 }} />
                     </a>
                     <a href="https://www.behance.net/gallery/171803185/Intregative-Project-TerraVerdecom" target="_blank">
-                        <img src="https://i.imgur.com/fa34SzQ.png"style={{ fontSize: 60, color: "white", width:"47px",padding:3 }} />
+                        <img src="https://i.imgur.com/ux6BHZE.png"style={{ fontSize: 60, color: "white", width:"47px",padding:3 }} />
                     </a>
                 </Box>
             </Box>
