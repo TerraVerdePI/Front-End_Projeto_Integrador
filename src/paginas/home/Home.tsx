@@ -35,6 +35,10 @@ function Home() {
     }, [token])
     return (
         < >
+
+                <Grid xs={12} className='produtos'>
+                    <TabProduto />
+                </Grid>
             <Grid container direction="row" justifyContent="center" alignItems="center" style={{ backgroundColor: "#14c3a2" }}>
                 <Grid alignItems="center" item xs={6}>
                     <Box paddingX={10} >
@@ -62,7 +66,6 @@ function Home() {
                     <TabProduto />
                 </Grid>
             </Grid>
-
         </>
     );
 }
