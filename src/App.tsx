@@ -18,12 +18,15 @@ import LadingPage from './paginas/ladingPage/LadingPage';
 import PaginaProduto from './components/produtos/produtoPage/PaginaProduto';
 import Perfil from './paginas/perfil/Perfil';
 import Sobre from './paginas/sobre/Sobre';
+import {ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
     < >
       
       <Provider store={store}>
+      <ToastContainer />
       <BrowserRouter>
         <Navbar />
         

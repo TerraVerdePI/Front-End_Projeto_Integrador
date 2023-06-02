@@ -8,6 +8,7 @@ import { addToken } from "../../../store/tokens/actions";
 import ShoppingCartSharpIcon from '@mui/icons-material/ShoppingCartSharp';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import AvatarPerfil from './AvatarPerfil';
+import { toast } from 'react-toastify';
 
 function Navbar() {
   const token = useSelector<TokenState, TokenState["tokens"]>(
@@ -18,7 +19,18 @@ function Navbar() {
   const navigate = useNavigate();
 
   function logout() {
-    alert('Usuário deslogado com sucesso');
+    
+    toast.success('Usuário deslogado com sucesso!', {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      theme: "colored",
+      progress: undefined,
+      });
+
     dispatch(addToken(''))
     navigate('/login');
   }
