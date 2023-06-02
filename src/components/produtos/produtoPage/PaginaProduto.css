@@ -1,25 +1,183 @@
 .product-image {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
-    margin-bottom: 300px;
+    
 }
-
+.product-container{
+    height: 100vh;
+}
 .product-image img {
     width: 400px;
     height: 400px; /* Tamanho desejado para a imagem */
     object-fit: cover; /* Para manter a proporção da imagem */
     border-radius: 30px;
+    margin-top: 100px;
+    transition: transform 0.3s ease-in-out;
+    
 }
 
-.text-container{
-    margin-top: 50px;
-    margin-bottom: 300px;
+.product-image:hover img {
+    transform: scale(1.2);
+  }
+
+.text-title{
+    padding-top: 100px;
 }
 
-.btn-comprar{
-    color: rgb(0, 2, 1);
-    background-color: rgb(2, 250, 250);
-    margin-right: 10px;
-}
+.botoes {
+    display: flex;
+    gap: 20px;
+  }
+  .btn-comprar {
+    min-width: 150px;
+    min-height: 30px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    font-weight: 700;
+    color: #313133;
+    background: #4FD1C5;
+    background: linear-gradient(90deg, rgba(129, 230, 217, 1) 0%, rgba(79, 209, 197, 1) 100%);
+    border: none;
+    border-radius: 1000px;
+    box-shadow: 10px 10px 20px rgba(79, 209, 197, 0.64);
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    padding: 6px;
+  }
+  
+  .btn-comprar::before {
+    content: '';
+    border-radius: 1000px;
+    min-width: calc(150px + 10px);
+    min-height: calc(30px + 10px);
+    border: 4px solid #00FFCB;
+    box-shadow: 0 0 40px rgba(0, 255, 203, 0.64);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.3s ease-in-out 0s;
+  }
+  
+  .btn-comprar:hover, .btn-comprar:focus {
+    color: #313133;
+    transform: translateY(-4px);
+  }
+  
+  .btn-comprar:hover::before, .btn-comprar:focus::before {
+    opacity: 1;
+  }
+  
+  .btn-comprar::after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    border: 2px solid #00FFCB;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 1.5s infinite;
+  }
+  
+  .btn-comprar:hover::after, .btn-comprar:focus::after {
+    animation: none;
+    display: none;
+  }
+  
+  @keyframes ring {
+    0% {
+      width: 16px;
+      height: 16px;
+      opacity: 1;
+    }
+    100% {
+      width: 150px;
+      height: 150px;
+      opacity: 0;
+    }
+  }
+  
 
+  .btn {
+    border: none;
+    font-family: 'Lato';
+    font-size: 12px; /* Tamanho da fonte ajustado */
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    padding: 10px 30px; /* Padding ajustado */
+    display: inline-block;
+    margin: 10px 20px; /* Margem ajustada */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    transition: all 0.3s;
+  }
+  
+  .btn:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    transition: all 0.3s;
+  }
+  
+  /* Pseudo elements for icons */
+  .btn:before {
+    font-family: 'FontAwesome';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* Icon separator */
+  .btn-sep {
+    padding: 10px 30px 10px 80px; /* Padding ajustado */
+  }
+  
+  .btn-sep:before {
+    background: rgba(0,0,0,0.15);
+  }
+  
+  .btn-2 {
+    background: #2ecc71;
+    color: #fff;
+  }
+  
+  .btn-2:hover {
+    background: #27ae60;
+  }
+  
+  .btn-2:active {
+    background: #27ae60;
+    top: 2px;
+  }
+  
+  .btn-2:before {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    line-height: 3;
+    font-size: 100%; /* Tamanho da fonte do ícone ajustado */
+    width: 30px; /* Largura do ícone ajustada */
+  }
+  
+  .icon-cart:before {
+    content: "🛒";
+  }
+  

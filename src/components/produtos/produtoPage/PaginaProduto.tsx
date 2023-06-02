@@ -153,13 +153,13 @@ function PaginaProduto() {
 
     return (
         <>
-
+ 
             <Grid container spacing={2} className="product-container">
                 <Grid item xs={12} md={6} className="product-image">
                     <img src={produto.foto} alt={produto.nome} />
                 </Grid>
                 <Grid item xs={12} md={6} className="text-container">
-                    <Typography variant="h4" component="h1" gutterBottom>
+                    <Typography variant="h4" className="text-title" component="h1" gutterBottom>
                         {produto.nome}
                     </Typography>
                     <Typography variant="body1" gutterBottom>
@@ -169,14 +169,13 @@ function PaginaProduto() {
                         R$ {produto.preco.toFixed(2)}
                     </Typography>
                     
-                        <div className="botoes">
-                            <Button className="btn-comprar" variant="contained"  >
+                            <button className="btn-comprar"  >
                                 Comprar
-                            </Button>
-                            <Button className="btn-carrinho" variant="contained" color="primary" >
+                            </button>
+                            <button className="btn btn-2 btn-sep icon-cart" >
                                 Adicionar ao Carrinho
-                            </Button>
-                        </div>
+                            </button>
+                        
                         <Box
                         sx={{
                             '& > legend': { mt: 2 },
@@ -193,6 +192,9 @@ function PaginaProduto() {
                         </Box>
                         <Typography variant="body2" component="p">
                           Fornecedor: {produto.usuario?.nome}
+                      </Typography>
+                      <Typography variant="body2" component="p">
+                          Região próxima: {produto.regiao}
                       </Typography>
                 </Grid>
             </Grid>
