@@ -123,8 +123,8 @@ function Login() {
                         </Box>
                         <Box marginTop={2} textAlign='center'>
 
-                            <Button type='submit' variant='contained' color='primary' className='btnLogin'>
-                                Login
+                            <Button type='submit' variant='contained' className='btnLogin'>
+                              Login
                             </Button>
 
                         </Box>

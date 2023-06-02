@@ -56,11 +56,11 @@ export default function CustomizedAccordions() {
 
   return (
     <>
-      <Typography className='titulo-perguntas' style={{ textAlign: 'center' }}>Perguntas Frequentes</Typography>
-      <Grid container direction={'row'} display={'flex'} justifyContent={'center'} alignItems={'center'} >
-
-
-
+    <Box className='titulo-perguntas' >
+      <Typography variant='h5'  style={{ textAlign: 'center', fontWeight:'bold' }}>Perguntas Frequentes</Typography>
+      <Typography variant='subtitle1' className='subtitulo-perguntas' style={{ textAlign: 'center' }}>& Respostas</Typography>
+      </Box>
+    <Grid container direction={'row'} display={'flex'} justifyContent={'center'} alignItems={'center'} >
         <Grid xs={9} className="background">
           <Grid item>
             <Box className='marginQna'>

@@ -44,7 +44,7 @@ function ListaProduto({ exibirBotoes = true }) {
     <>
       
       
-      <Input placeholder="Buscar Produtos" variant="soft" color="info"
+      <Input placeholder="Buscar Produtos" 
       type="text"
       value={termoBusca}
       onChange={(e) => setTermoBusca(e.target.value)}
@@ -73,14 +73,14 @@ function ListaProduto({ exibirBotoes = true }) {
                         style={{ width: "100%", marginTop: 10, height: 200, objectFit: "cover", marginBottom: 10 }}
 
                       />
-                <Typography style={{textAlign: 'center' }} variant="h5" component="h2">
+                <Typography style={{textAlign: 'center' }} variant="h5" component="h2" className='produtoNome'>
                   {produto.nome}
                 </Typography>
                 </Link>
                 <Typography variant="body2" component="p">
                         {produto.descricao.length > 100 ? produto.descricao.substr(0, 100) + '... ' : produto.descricao}
                         <Link to={`/produtos/${produto.id}`} className="text-decorator-none">
-                          <Typography variant="body2" color="primary" >
+                          <Typography variant="body2" className='saiba' >
                             Saiba mais
                           </Typography>
                         </Link>
@@ -93,8 +93,6 @@ function ListaProduto({ exibirBotoes = true }) {
                           Preço: R$ {produto.preco}
                         </Typography>
                         <button className='btn-12'
-                        
-                          color="primary"
                           
                         >
                           <span>CLIQUE AQUI</span>
@@ -136,13 +134,13 @@ function ListaProduto({ exibirBotoes = true }) {
       }
       </Grid>
       </Box>
-      <div className='botao-carregarMais' style={{textAlign: 'center'}}>
+      <div  style={{textAlign: 'center'}}>
       <Button
         variant="contained"
-        color="primary"
         onClick={() => setQuantidadeCards(quantidadeCards + 9)}
         style={{margin: 10}}
-        
+        className='botao-carregarMais'
+        color='inherit'
       >
           Carregar Mais
       </Button>

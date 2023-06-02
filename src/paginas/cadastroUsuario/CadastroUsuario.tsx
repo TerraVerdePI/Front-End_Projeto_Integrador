@@ -111,7 +111,7 @@ function CadastroUsuario() {
                         
                     </form>
                     <Box marginTop={2} textAlign='center'>
-                        <Button type='submit' variant='contained' color='primary' className='btnCadastrar'>
+                        <Button type='submit' variant='contained' className='btnCadastrar'>
                                 Criar Conta
                             </Button>
                         <Grid container direction='row' justifyContent='flex-start' style={{marginTop:40}}>
