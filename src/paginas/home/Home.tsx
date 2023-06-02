@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../store/tokens/tokensReducer";
 import Perguntas from "../../components/perguntas/Perguntas";
+import { toast } from "react-toastify";
 
 function Home() {
     let navigate = useNavigate();
@@ -16,7 +17,18 @@ function Home() {
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado")
+
+
+            toast.info('Você precisa estar logado!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
             navigate("/login")
 
         }
@@ -27,7 +39,33 @@ function Home() {
                 <Grid xs={12} className='produtos'>
                     <TabProduto />
                 </Grid>
-            
+            <Grid container direction="row" justifyContent="center" alignItems="center" style={{ backgroundColor: "#14c3a2" }}>
+                <Grid alignItems="center" item xs={6}>
+                    <Box paddingX={10} >
+                        <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" style={{ color: "white", fontWeight: "bold" }}>Olá!!</Typography>
+                        <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" style={{ color: "white", fontWeight: "bold" }}>venda aqui seus alimentos e cursos!</Typography>
+                    </Box>
+                    <Box display="flex" justifyContent="center">
+
+                        <Link to="/formularioProduto" className="text-decoration-none">
+                            <Button variant="outlined" style={{ borderColor: "#595b5a", backgroundColor: "#7cf49a", color: "#595b5a" }}>
+                                Cadastrar Produto
+                            </Button>
+                        </Link>
+                        <Link to="/produtos" className="text-decoration-none">
+                            <Button variant="outlined" style={{ borderColor: "#595b5a", backgroundColor: "#7cf49a", color: "#595b5a", marginLeft: 5 }}>
+                                Ver Produtos
+                            </Button>
+                        </Link>
+                    </Box>
+                </Grid>
+                <Grid item xs={6} >
+                    <img src="https://raw.githubusercontent.com/maurilosantos/frontBlog/c5e97073d92e0fdfdce730a3a15870f87457fd01/src/assets/home.svg" alt="" width="500px" height="500px" />
+                </Grid>
+                <Grid xs={12} className='produtos'>
+                    <TabProduto />
+                </Grid>
+            </Grid>
         </>
     );
 }

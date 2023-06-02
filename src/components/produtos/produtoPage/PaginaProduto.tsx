@@ -11,6 +11,7 @@ import './PaginaProduto.css'
 import Button from '@mui/material/Button';
 
 import Produto from '../../../model/Produto';
+import { toast } from 'react-toastify';
 
 function PaginaProduto() {
     const navigate = useNavigate();
@@ -67,7 +68,17 @@ function PaginaProduto() {
 
     useEffect(() => {
         if (token === '') {
-            alert('É necessário um token para acessar esta página. Por favor, faça login.');
+           
+            toast.info('É necessário um token para acessar esta página. Por favor, faça login!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+                });
             navigate('/login');
         }
     }, []);
@@ -81,7 +92,18 @@ function PaginaProduto() {
             });
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                alert('Token expirado, faça login novamente.');
+              
+                toast.info('Token expirado, faça login novamente!!', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                    });
+
                 dispatch(addToken(''));
                 navigate('/login');
             }
@@ -129,10 +151,29 @@ function PaginaProduto() {
                         Authorization: token,
                     },
                 });
-                alert('Produto atualizado com sucesso!');
+               
+                toast.success('Produto atualizado com sucesso!!', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                    });
                 navigate('/produtos');
             } catch (error) {
-                alert('Erro ao atualizar o produto.');
+                toast.error('Erro ao atualizar o produto.', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                    });
             }
         } else {
             try {
@@ -141,10 +182,30 @@ function PaginaProduto() {
                         Authorization: token,
                     },
                 });
-                alert('Produto cadastrado com sucesso!');
+               
+                toast.success('Produto cadastrado com sucesso', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                    });
                 navigate('/produtos');
             } catch (error) {
-                alert('Erro ao cadastrar o produto.');
+              
+                toast.error('Erro ao cadastrar o produto.', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                    });
             }
         }
     }

@@ -10,6 +10,7 @@ import { addId, addToken } from '../../store/tokens/actions';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import { Google } from '@mui/icons-material';
+import { toast } from 'react-toastify';
 
 
 function Login() {
@@ -69,10 +70,28 @@ function Login() {
         e.preventDefault();
         try {
             await login(`/usuarios/logar`, usuarioLogin, setRespUsuarioLogin)
-
-            alert('Usuário logado com sucesso!');
+            toast.success('Usuário logado com sucesso!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+                });
+            
         } catch (error) {
-            alert('Dados do usuário inconsistentes. Erro ao logar!');
+            toast.error('Dados do usuário inconsistentes. Erro ao logar!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+                });
         }
     }
 
