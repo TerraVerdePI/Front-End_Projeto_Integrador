@@ -95,21 +95,63 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/Guacciari"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/127262251?v=4" width="150px;" alt=""/><br /><sub><b>Gustavo Acciari</b></sub></a><br /><a href="https://thegetset.herokuapp.com/" title="GetSet"></a></td>
-
-
-    <td align="center"><a href=" https://github.com/maurilosantos"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/109925535?v=4" width="150px;" alt=""/><br /><sub><b>Maurilo Santos</b></sub></a><br /><a href="https://thegetset.herokuapp.com/" title="GetSet"></a></td>
-      
-          <td align="center"><a href="https://github.com/LucasLimaDSGN"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/120518488?v=4" width="150px;" alt=""/><br /><sub><b>Lucas Lima</b></sub></a><br /><a href="https://thegetset.herokuapp.com/" title="GetSet"></a></td>
-      
-    <td align="center"><a href="https://github.com/rafaelGalvao1"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/117536257?v=4" width="150px;" alt=""/><br /><sub><b>Rafael Galvão</b></sub></a><br /><a href="https://thegetset.herokuapp.com/" title="GetSet"></a></td>
-      
-    <td align="center"><a href="https://github.com/Janjanzinh"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/116311574?v=4" width="150px;" alt=""/><br /><sub><b>Janilson Alves</b></sub></a><br /><a href="https://thegetset.herokuapp.com/" title="GetSet"></a></td>
-    
-    <td align="center"><a href="https://github.com/HenriqueSam45Br"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/127551165?v=4" width="150px;" alt=""/><br /><sub><b>Rafael Galvão</b></sub></a><br /><a href="https://thegetset.herokuapp.com/" title="GetSet"></a></td>
-
+    <td align="center">
+      <a href="https://github.com/Guacciari">
+        <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/127262251?v=4" width="150px;" alt=""/>
+        <br />
+        <sub><b>Gustavo Acciari</b></sub>
+      </a>
+      <br />
+      <a href="https://thegetset.herokuapp.com/" title="GetSet"></a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/maurilosantos">
+        <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/109925535?v=4" width="150px;" alt=""/>
+        <br />
+        <sub><b>Maurilo Santos</b></sub>
+      </a>
+      <br />
+      <a href="https://thegetset.herokuapp.com/" title="GetSet"></a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/LucasLimaDSGN">
+        <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/120518488?v=4" width="150px;" alt=""/>
+        <br />
+        <sub><b>Lucas Lima</b></sub>
+      </a>
+      <br />
+      <a href="https://thegetset.herokuapp.com/" title="GetSet"></a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/rafaelGalvao1">
+        <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/117536257?v=4" width="150px;" alt=""/>
+        <br />
+        <sub><b>Rafael Galvão</b></sub>
+      </a>
+      <br />
+      <a href="https://thegetset.herokuapp.com/" title="GetSet"></a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/Janjanzinh">
+        <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/116311574?v=4" width="150px;" alt=""/>
+        <br />
+        <sub><b>Janilson Alves</b></sub>
+      </a>
+      <br />
+      <a href="https://thegetset.herokuapp.com/" title="GetSet"></a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/HenriqueSam45Br">
+        <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/127551165?v=4" width="150px;" alt=""/>
+        <br />
+        <sub><b>Henrique Sam</b></sub>
+      </a>
+      <br />
+      <a href="https://thegetset.herokuapp.com/" title="GetSet"></a>
+    </td>
   </tr>
 </table>
+
 
 
 Idealizamos durante o <em>Bootcamp Desenvolvedor Web Java Junior</em> oferecida pela <a href="https://brazil.generation.org/">Generation Brasil</a>. A missão da Generation é apoiar jovens a construírem carreiras sustentáveis e prósperas e fornecer aos empregadores uma rede de talentos altamente qualificados e motivados, visando a diversidade e aprimorando os resultados de seus negócios.
