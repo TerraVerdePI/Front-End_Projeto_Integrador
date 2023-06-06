@@ -7,7 +7,7 @@
 </h1>
 
 
-<h4 align="center">🌿 E-commerce em desenvolvimento  🌿</h4>
+<h4 align="center">🌿 E-commerce desenvolvido  🌿</h4>
 
 <p align="center">
  <a href="#-sobre-o-projeto">Sobre</a> •
@@ -40,33 +40,9 @@ Terra Verde: Plataforma E-commerce utilizada entre produtores por região, onde 
 
 ---
 
-## 🎨 imagens
+## 🎨 Preview
 
-###  Mobile
-
-<p align="center">
-
-
-  <img alt="GetSet" title="#GetSet" src="C:\Users\user\Desktop\Generation Atividades\Github\Integrative-Project\IMAGEMMMMM" width="200px">
-
-  <img alt="GetSet" title="#GetSet" src="C:\Users\user\Desktop\Generation Atividades\Github\Integrative-Project\IMAGEMMMMMM" width="200px">
-
-  <img alt="GetSet" title="#GetSet" src="C:\Users\user\Desktop\Generation Atividades\Github\Integrative-Project\IMAGEMMMMMMM" width="200px">
-
-</p>
-
-### Web
-
-<p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
-
-
-  <img alt="GetSet" title="#GetSet" src="C:\Users\user\Desktop\Generation Atividades\Github\Integrative-Project\IMAGEMMMMM" width="200px" heigth="250px">
-
-  <img alt="GetSet" title="#GetSet" src="C:\Users\user\Desktop\Generation Atividades\Github\Integrative-Project\IMAGEMMMMMMM" width="200px" heigth="250px">
-
-  <img alt="GetSet" title="#GetSet" src="C:\Users\user\Desktop\Generation Atividades\Github\Integrative-Project\IMAGEMMMMMM" width="200px" heigth="250px">
-
-</p>
+<a href="https://imgur.com/XvfSoDq"><img src="https://i.imgur.com/XvfSoDq.png" title="source: imgur.com" /></a>
 
 ---
 
@@ -117,16 +93,24 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 
 ## 👨‍💻 Contribuidores
 
-
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/Guacciari"><img style="border-radius: 50%;" src="https://media.licdn.com/dms/image/D4D03AQG5PiEChE4ITw/profile-displayphoto-shrink_800_800/0/1680645563983?e=1687996800&v=beta&t=SQnX_4cIP30LKt51Vo82lGHMVp5zYHuk0ATANt8GLUc" width="150px;" alt=""/><br /><sub><b>Gustavo Acciari</b></sub></a><br /><a href="https://thegetset.herokuapp.com/" title="GetSet"></a></td>
-    <td align="center"><a href=" https://github.com/maurilosantos"><img style="border-radius: 50%;" src="https://media.licdn.com/dms/image/C4D03AQFdlK6-d7blgg/profile-displayphoto-shrink_200_200/0/1652486506638?e=1687996800&v=beta&t=vtP3kdKcpnobFNRKPYNVr8iZcpsVl_Ma1yVd0TQZcg8" width="150px;" alt=""/><br /><sub><b>Maurilo Santos</b></sub></a><br /><a href="https://thegetset.herokuapp.com/" title="GetSet"></a></td>
-    <td align="center"><a href="https://github.com/HenriqueSam45Br?tab=followers"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/127551165?v=4" width="150px;" alt=""/><br /><sub><b>Caio Henrique</b></sub></a><br /><a href="https://thegetset.herokuapp.com/" title="GetSet"> </a></td>
-    <td align="center"><a href="  https://github.com/LucasLimaDSGN"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/120518488?v=4" width="150px;" alt=""/><br /><sub><b>Lucas Lima</b></sub></a><br /><a href="https://thegetset.herokuapp.com/" title="GetSet"></a></td>
-    <td align="center"><a href="https://github.com/Janjanzinh"><img style="border-radius: 50%;" src="https://media.licdn.com/dms/image/C4E03AQGm_84KaIvt8w/profile-displayphoto-shrink_200_200/0/1649428037212?e=1687996800&v=beta&t=vtI7HxpI0m2i0jW98NxSurpbchZbRDYZfAVIr5rnhDE" width="150px;" alt=""/><br /><sub><b>Janilson Alves</b></sub></a><br /><a href="https://thegetset.herokuapp.com/" title="GetSet"></a></td> 
+    <td align="center"><a href="https://github.com/Guacciari"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/127262251?v=4" width="150px;" alt=""/><br /><sub><b>Gustavo Acciari</b></sub></a><br /><a href="https://thegetset.herokuapp.com/" title="GetSet"></a></td>
+
+
+    <td align="center"><a href=" https://github.com/maurilosantos"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/109925535?v=4" width="150px;" alt=""/><br /><sub><b>Maurilo Santos</b></sub></a><br /><a href="https://thegetset.herokuapp.com/" title="GetSet"></a></td>
+      
+          <td align="center"><a href="https://github.com/LucasLimaDSGN"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/120518488?v=4" width="150px;" alt=""/><br /><sub><b>Lucas Lima</b></sub></a><br /><a href="https://thegetset.herokuapp.com/" title="GetSet"></a></td>
+      
+    <td align="center"><a href="https://github.com/rafaelGalvao1"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/117536257?v=4" width="150px;" alt=""/><br /><sub><b>Rafael Galvão</b></sub></a><br /><a href="https://thegetset.herokuapp.com/" title="GetSet"></a></td>
+      
+    <td align="center"><a href="https://github.com/Janjanzinh"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/116311574?v=4" width="150px;" alt=""/><br /><sub><b>Janilson Alves</b></sub></a><br /><a href="https://thegetset.herokuapp.com/" title="GetSet"></a></td>
+    
+    <td align="center"><a href="https://github.com/HenriqueSam45Br"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/127551165?v=4" width="150px;" alt=""/><br /><sub><b>Rafael Galvão</b></sub></a><br /><a href="https://thegetset.herokuapp.com/" title="GetSet"></a></td>
+
   </tr>
 </table>
+
 
 Idealizamos durante o <em>Bootcamp Desenvolvedor Web Java Junior</em> oferecida pela <a href="https://brazil.generation.org/">Generation Brasil</a>. A missão da Generation é apoiar jovens a construírem carreiras sustentáveis e prósperas e fornecer aos empregadores uma rede de talentos altamente qualificados e motivados, visando a diversidade e aprimorando os resultados de seus negócios.
 
