@@ -36,7 +36,12 @@ Terra Verde: Plataforma E-commerce utilizada entre produtores por região, onde 
 
 ## ⚙️ Funcionalidades
 
-- 
+- Catálogo de Produtos
+- Pesquisa de produtos por nome ou palavras-chave.
+- Registro de usuários para criar uma conta no sistema.
+- Autenticação de usuários para fazer login na conta.
+- Gerenciamento de informações do perfil do usuário.
+- Área administrativa para gerenciar produtos, categorias, usuários.
 
 ---
 
@@ -53,23 +58,21 @@ Este projeto é divido em duas partes:
 1. Backend 
 2. Frontend 
 
-💡O Frontend precisa que o Backend esteja sendo executado para funcionar.
+💡 O Frontend precisa que o Backend esteja sendo executado para funcionar.
 
-### Pré-requisitos
+Para verificar no deploy: [Acesse aqui](https://front-end-projeto-integrador.vercel.app/).
 
-Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+### Pré-requisitos para acessar na máquina
+
+Antes de começar, você vai precisar ter instalado as seguintes ferramentas:
 
 #### 🎲 Rodando o Backend (servidor)
 
-```bash
-
-```
+Java/Spring Boot/MySQL.
 
 #### 🧭 Rodando a aplicação web (Frontend)
 
-```bash
-
-```
+React.js/NPM.
 
 ---
 
@@ -155,8 +158,6 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 
 
 Idealizamos durante o <em>Bootcamp Desenvolvedor Web Java Junior</em> oferecida pela <a href="https://brazil.generation.org/">Generation Brasil</a>. A missão da Generation é apoiar jovens a construírem carreiras sustentáveis e prósperas e fornecer aos empregadores uma rede de talentos altamente qualificados e motivados, visando a diversidade e aprimorando os resultados de seus negócios.
-
-##  Como contribuir para o projeto
 
 
 
