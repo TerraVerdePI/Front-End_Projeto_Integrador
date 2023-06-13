@@ -130,12 +130,12 @@ function CadastroUsuario() {
                         <TextField value={usuario.data_nascimento} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='data_nascimento' label='Data de Nascimento' variant='outlined' name='data_nascimento' margin='normal' fullWidth />
                         {vozTech == true && <TextField id='voz_tech' label='Código VozTech' variant='outlined' name='vozTech' margin='normal' fullWidth />}
                         
-                        
-                    </form>
-                    <Box marginTop={2} textAlign='center'>
                         <Button type='submit' variant='contained' className='btnCadastrar'>
                                 Criar Conta
                             </Button>
+                    </form>
+                    <Box marginTop={2} textAlign='center'>
+                        
                         <Grid container direction='row' justifyContent='flex-start' style={{marginTop:40}}>
                         <Typography>Já possui uma conta?</Typography>  
                             <Link to='/login' className='text-decorator-none'>
