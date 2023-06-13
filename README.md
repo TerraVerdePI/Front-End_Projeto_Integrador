@@ -1,13 +1,10 @@
 <p align="center">
 </p>
 
-
-<h1 align="center">
-    <img alt="GetSet E-commerce" href="#" src="https://user-images.githubusercontent.com/117536257/231513860-7330bfe0-31fa-4403-ba25-a606b7747186.jpg" />
-</h1>
+![54750df4-6894-4d11-ac90-399b4e3225ad](https://github.com/TerraVerdePI/Front-End_Projeto_Integrador/assets/127262251/6608407d-b2f5-4587-b4d8-ff805d5cc79d)
 
 
-<h4 align="center">🌿 E-commerce desenvolvido  🌿</h4>
+<h4 align="center">⚠️ E-commerce em desenvolvimento  ⚠️</h4>
 
 <p align="center">
  <a href="#-sobre-o-projeto">Sobre</a> •
@@ -20,10 +17,15 @@
  <a href="#-funcionalidades">Funcionalidades</a> •
 </p>
 
-
 ## 💻 Sobre o Projeto
 
 Terra Verde: Plataforma E-commerce utilizada entre produtores por região, onde seria possível a publicação do produto e o local onde ele está disponível, bem como o valor do referido produto. O usuário assim interessado em adquirir realizaria a compra online e poderia receber em casa combinando com o produtor ou iria ao local informado na descrição, os alimentos seriam a baixo custo pois além de eliminar intermediários (locais de compra e impostos) os alimentos podem ser os "fora do padrão" que estão em perfeitas condições de consumo, mas muitas vezes não chegam ao consumidor por não serem aceitos em grandes redes de supermercados.
+---
+
+
+
+Projeto desenvolvido durante o **Bootcamp Desenvolvedor Web Java Junior** oferecida pela [Generation Brasil](https://brazil.generation.org/).
+A missão da Generation Brasil é apoiar jovens a construírem carreiras sustentáveis e prósperas e fornecer aos empregadores uma rede de talentos altamente qualificados e motivados, visando aprimorar os resultados de seus negócios.
 
 ---
 
@@ -45,9 +47,21 @@ Terra Verde: Plataforma E-commerce utilizada entre produtores por região, onde 
 
 ---
 
-## 🎨 Preview
+## 🎨 imagens
 
+### : Mobile
 <a href="https://imgur.com/XvfSoDq"><img src="https://i.imgur.com/XvfSoDq.png" title="source: imgur.com" /></a>
+
+<p
+	
+
+### : Web
+
+
+![11](https://github.com/TerraVerdePI/Front-End_Projeto_Integrador/assets/127262251/48a22a17-32e4-47ee-93d8-56adbe00b976)
+![Capturar](https://github.com/TerraVerdePI/Front-End_Projeto_Integrador/assets/127262251/e7bfdd8b-af67-477a-a579-e2de0f016be6)
+
+</p>
 
 ---
 
@@ -74,25 +88,32 @@ Java/Spring Boot/MySQL.
 
 React.js/NPM.
 
----
-
 ## 🛠 Tecnologias
 
-<div align="center">
-	<code><img height="38" src="https://user-images.githubusercontent.com/25181517/117201156-9a724800-adec-11eb-9a9d-3cd0f67da4bc.png" alt="Java" title="Java" /></code>
-	<code><img height="38" src="https://user-images.githubusercontent.com/25181517/117201470-f6d56780-adec-11eb-8f7c-e70e376cfd07.png" alt="Spring" title="Spring" /></code>
-	<code><img height="38" src="https://user-images.githubusercontent.com/25181517/183897015-94a058a6-b86e-4e42-a37f-bf92061753e5.png" alt="React" title="React" /></code>
-	<code><img height="38" src="https://user-images.githubusercontent.com/25181517/183890598-19a0ac2d-e88a-4005-a8df-1ee36782fde1.png" alt="TypeScript" title="TypeScript" /></code>
-	<code><img height="38" src="https://user-images.githubusercontent.com/25181517/183891303-41f257f8-6b3d-487c-aa56-c497b880d0fb.png" alt="Spring Boot" title="Spring Boot" /></code>
-	<code><img height="38" src="https://user-images.githubusercontent.com/25181517/183896128-ec99105a-ec1a-4d85-b08b-1aa1620b2046.png" alt="MySQL" title="MySQL" /></code>
-	<code><img height="38" src="https://user-images.githubusercontent.com/25181517/192107858-fe19f043-c502-4009-8c47-476fc89718ad.png" alt="REST" title="REST" /></code>
-	<code><img height="38" src="https://user-images.githubusercontent.com/25181517/192108372-f71d70ac-7ae6-4c0d-8395-51d8870c2ef0.png" alt="Git" title="Git" /></code>
-	<code><img height="38" src="https://user-images.githubusercontent.com/25181517/192108891-d86b6220-e232-423a-bf5f-90903e6887c3.png" alt="Visual Studio Code" title="Visual Studio Code" /></code>
-	<code><img height="38" src="https://user-images.githubusercontent.com/25181517/189716630-fe6c084c-6c66-43af-aa49-64c8aea4a5c2.png" alt="Material UI" title="Material UI" /></code>
-	<code><img height="38" src="https://user-images.githubusercontent.com/25181517/189715289-df3ee512-6eca-463f-a0f4-c10d94a06b2f.png" alt="Figma" title="Figma" /></code>
-</div>
+As seguintes ferramentas foram usadas na construção do projeto:
+
+#### **Website**  ([React](https://react.dev/)  +  [TypeScript](https://www.typescriptlang.org/))
 
 
+
+
+#### [](Ecoleta#server-nodejs--typescript)**Server**  ([NodeJS](https://nodejs.org/en/)  +  [TypeScript](https://www.typescriptlang.org/))
+
+
+ 
+  
+
+-   **[Spring Boot](https://spring.io/projects/spring-boot)**
+
+-   **[MySQL Server(8.0.22)](https://dev.mysql.com/downloads/mysql/)**
+
+
+#### [](https://github.com/TerraVerdePI/Integrative-Project)**Utilitários**
+
+-   Protótipo:  [Figma](https://www.figma.com/)
+
+-   Editor:  **[Visual Studio Code](https://code.visualstudio.com/)**, 
+-   Markdown:  **[Markdown Emoji](https://gist.github.com/rxaviers/7360908)**
 
 ## 👨‍💻 Contribuidores
 
@@ -154,12 +175,3 @@ React.js/NPM.
     </td>
   </tr>
 </table>
-
-
-
-Idealizamos durante o <em>Bootcamp Desenvolvedor Web Java Junior</em> oferecida pela <a href="https://brazil.generation.org/">Generation Brasil</a>. A missão da Generation é apoiar jovens a construírem carreiras sustentáveis e prósperas e fornecer aos empregadores uma rede de talentos altamente qualificados e motivados, visando a diversidade e aprimorando os resultados de seus negócios.
-
-
-
-
----
