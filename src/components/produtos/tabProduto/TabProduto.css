@@ -1,3 +1,10 @@
 .titulo{
     font-weight: bold;
  }
+ .tabProduto{
+    background-color: #82A3A1!important;
+ }
+ .textTab{
+    color: rgb(255, 255, 255)!important;
+    font-weight: bold!important;
+ }

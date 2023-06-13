@@ -44,7 +44,7 @@ function ListaProduto({ exibirBotoes = true }) {
     <>
       
       
-      <Input placeholder="Buscar Produtos" variant="soft" color="info"
+      <Input placeholder="Buscar Produtos" 
       type="text"
       value={termoBusca}
       onChange={(e) => setTermoBusca(e.target.value)}
@@ -66,19 +66,21 @@ function ListaProduto({ exibirBotoes = true }) {
                 <Typography color="textSecondary" gutterBottom>
                   Produtos
                 </Typography>
-                <img
+                <Link to={`/produtos/${produto.id}`} className="text-decorator-none">
+                <img    className='foto-produto'
                         src={produto.foto}
                         alt={produto.nome}
                         style={{ width: "100%", marginTop: 10, height: 200, objectFit: "cover", marginBottom: 10 }}
 
-                      /> 
-                <Typography style={{textAlign: 'center' }} variant="h5" component="h2">
+                      />
+                <Typography style={{textAlign: 'center' }} variant="h5" component="h2" className='produtoNome'>
                   {produto.nome}
                 </Typography>
+                </Link>
                 <Typography variant="body2" component="p">
                         {produto.descricao.length > 100 ? produto.descricao.substr(0, 100) + '... ' : produto.descricao}
                         <Link to={`/produtos/${produto.id}`} className="text-decorator-none">
-                          <Typography variant="body2" color="primary" >
+                          <Typography variant="body2" className='saiba' >
                             Saiba mais
                           </Typography>
                         </Link>
@@ -87,15 +89,16 @@ function ListaProduto({ exibirBotoes = true }) {
                   {produto.categoria?.descricao}
                 </Typography>
                 <Box display="flex" justifyContent="space-between" alignItems="center">
-                        <Typography variant="body2" component="p">
-                          Preço: {produto.preco}
+                        <Typography variant="h6" component="p">
+                          Preço: R$ {produto.preco}
                         </Typography>
-                        <Button
-                          variant="contained"
-                          color="primary"
+                        <button className='btn-12'
+                          
                         >
-                          Comprar
-                        </Button>
+                          <span>CLIQUE AQUI</span>
+                          <span>COMPRAR</span>
+                         
+                        </button>
                       </Box>
                       <Typography variant="body2" component="p">
                           Fornecedor: {produto.usuario?.nome}
@@ -131,13 +134,13 @@ function ListaProduto({ exibirBotoes = true }) {
       }
       </Grid>
       </Box>
-      <div className='botao-carregarMais' style={{textAlign: 'center'}}>
+      <div  style={{textAlign: 'center'}}>
       <Button
         variant="contained"
-        color="primary"
         onClick={() => setQuantidadeCards(quantidadeCards + 9)}
         style={{margin: 10}}
-        
+        className='botao-carregarMais'
+        color='inherit'
       >
           Carregar Mais
       </Button>

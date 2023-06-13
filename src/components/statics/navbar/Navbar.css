@@ -2,6 +2,12 @@
     background-color: white!important;
     color:black!important;
 }
+
+.botao:hover{
+  background-color: #527146!important;
+  color: white!important;
+}
+
 .botao2{
     background-color: white!important;
     color:black!important;
@@ -16,6 +22,6 @@
 
   }
   .linha:hover {
-    color: white;
+    color: #527146!important;
   }
   .fonte{}

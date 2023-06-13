@@ -28,14 +28,14 @@ function CarouselHome() {
         >
             <SwiperSlide className='slide-item'>
                 <Link to='/'>
-                <img src="https://i.imgur.com/O1EUmGQ.jpg" alt="" width="500px" height="300px" />
+                <img src="https://i.imgur.com/Z0DsPYk.png" alt="" width="500px" height="300px" />
                 </Link>
             </SwiperSlide>
             <SwiperSlide className='slide-item'>
-                <img src="https://i.imgur.com/eYD5mcL.jpg" alt="" width="500px" height="300px" />
+                <img src="https://i.imgur.com/p2b9dNp.png" alt="" width="500px" height="300px" />
             </SwiperSlide>
             <SwiperSlide className='slide-item'>
-                <img src="https://i.imgur.com/Q1x1ooh.jpg" alt="" width="500px" height="300px" />
+                <img src="https://i.imgur.com/btMVehw.jpg" alt="" width="500px" height="300px" />
             </SwiperSlide>
 
         </Swiper>

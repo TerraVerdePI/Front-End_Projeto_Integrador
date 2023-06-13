@@ -7,6 +7,8 @@ import { addToken } from "../../../store/tokens/actions";
 import ShoppingCartSharpIcon from '@mui/icons-material/ShoppingCartSharp';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import AvatarPerfil from './AvatarPerfil';
+import AddCircleSharpIcon from '@mui/icons-material/AddCircleSharp';
+import { toast } from 'react-toastify';
 
 function Navbar() {
   const token = useSelector<TokenState, TokenState["tokens"]>(
@@ -17,7 +19,18 @@ function Navbar() {
   const navigate = useNavigate();
 
   function logout() {
-    alert('Usuário deslogado com sucesso');
+    
+    toast.success('Usuário deslogado com sucesso!', {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      theme: "colored",
+      progress: undefined,
+      });
+
     dispatch(addToken(''))
     navigate('/login');
   }
@@ -33,7 +46,7 @@ function Navbar() {
           <Grid container justifyContent={'space-between'} className='fonte' direction={"row"}>
             <Box style={{ cursor: 'pointer' }}>
               <Typography variant="h5" color="" className='fonte'>
-                <img src="https://i.imgur.com/RWFhDaM.png" alt="" className='imagem' />
+                <img src="https://i.imgur.com/RWFhDaM.png" alt="" className='imagem' onClick={logout}/>
               </Typography>
             </Box>
             <Box display="flex" justifyContent="center" alignItems={"center"}>
@@ -44,10 +57,10 @@ function Navbar() {
                   </Typography>
                 </Box>
               </Link>
-              <Link to="/sobre" style={{ textDecoration: 'none' }}>
+              <Link to="/produtos" style={{ textDecoration: 'none' }}>
                 <Box mx={1} style={{ cursor: 'pointer' }}>
                   <Typography variant="h6" className='linha' color="black">
-                    Sobre nós
+                    Meus Produtos
                   </Typography>
                 </Box>
               </Link>
@@ -66,6 +79,11 @@ function Navbar() {
               <Box mx={1} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
                 < NotificationsIcon color="primary" />
               </Box>
+              <Box mx={1} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
+              <Link to='/formularioProduto'>
+                <AddCircleSharpIcon color="primary" />
+                </Link>
+                </Box>
               <Box mx={1} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
                 <AvatarPerfil />
               </Box>
