@@ -65,7 +65,7 @@ function Navbar() {
                   </Typography>
                 </Box>
               </Link>
-              <Link to="/" style={{ textDecoration: 'none' }}>
+              <Link to="https://blog-pessoal-front-ruby.vercel.app/" style={{ textDecoration: 'none' }}>
                 <Box mx={1} style={{ cursor: 'pointer' }}>
                   <Typography variant="h6" className='linha' color="black">
                     BlogTV
@@ -125,7 +125,7 @@ function Navbar() {
                   </Typography>
                 </Box>
               </Link>
-              <Link to="/" style={{ textDecoration: 'none' }}>
+              <Link to="https://blog-pessoal-front-ruby.vercel.app/" style={{ textDecoration: 'none' }}>
                 <Box mx={1} style={{ cursor: 'pointer' }}>
                   <Typography variant="h6" className='linha' color="black">
                     BlogTV
