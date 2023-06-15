@@ -164,4 +164,4 @@ As seguintes ferramentas foram usadas na construção do projeto:
     </td>
   </tr>
 </table>
-Idealizamos durante o *Bootcamp Desenvolvedor Web Java Junior* oferecida pela [Generation Brasil](https://brazil.generation.org/). A missão da Generation é apoiar jovens a construírem carreiras sustentáveis e prósperas e fornecer aos empregadores uma rede de talentos altamente qualificados e motivados, visando a diversidade e aprimorando os resultados de seus negócios.
+Idealizamos durante o Bootcamp Desenvolvedor Web Java Junior oferecida pela [Generation Brasil](https://brazil.generation.org/). A missão da Generation é apoiar jovens a construírem carreiras sustentáveis e prósperas e fornecer aos empregadores uma rede de talentos altamente qualificados e motivados, visando a diversidade e aprimorando os resultados de seus negócios.
