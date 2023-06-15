@@ -209,7 +209,7 @@ function CadastroProduto() {
                 
                 <TextField className='descricao' multiline rows={12} value={produto.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="descricao" label="Descrição" name="descricao" variant="outlined" margin="normal" fullWidth />
                 <Button type="submit" className='buttonPost' variant="contained" color="primary" fullWidth disabled={categoria.id === 0}>
-            {id !== undefined ? 'Atualizar Postagem' : 'Cadastrar Postagem'}
+            {id !== undefined ? 'Atualizar Produto' : 'Cadastrar Produto'}
           </Button>
             </form>
             <div className='space'>
