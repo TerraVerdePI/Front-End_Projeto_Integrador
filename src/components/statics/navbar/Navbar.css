@@ -14,7 +14,7 @@
     
 }
 .imagem {
-    width: 120px; /* Defina o tamanho desejado para a largura */
+    width: 80px; /* Defina o tamanho desejado para a largura */
     height: auto; /* A altura será ajustada automaticamente proporcionalmente à largura */
   }
   .navbar{

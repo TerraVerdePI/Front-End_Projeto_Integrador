@@ -47,7 +47,7 @@ function Navbar() {
           <Grid container justifyContent={'space-between'} className='fonte' direction={"row"}>
             <Box style={{ cursor: 'pointer' }}>
               <Typography variant="h5" color="" className='fonte'>
-                <img src="https://i.imgur.com/RWFhDaM.png" alt="" className='imagem' onClick={logout}/>
+                <img src="https://imgur.com/XQrHceV" alt="" className='imagem' onClick={logout}/>
               </Typography>
             </Box>
             <Box display="flex" justifyContent="center" alignItems={"center"}>
@@ -100,7 +100,7 @@ function Navbar() {
           <Grid container justifyContent={'space-between'} className='fonte' direction={"row"}>
             <Box style={{ cursor: 'pointer' }}>
               <Typography variant="h5" color="" className='fonte'>
-                <img src="https://i.imgur.com/RWFhDaM.png" alt="" className='imagem' />
+                <img src="https://imgur.com/XQrHceV" alt="" className='imagem' />
               </Typography>
             </Box>
             <Box display="flex" justifyContent="center" alignItems={"center"}>
