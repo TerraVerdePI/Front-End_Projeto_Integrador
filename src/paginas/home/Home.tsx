@@ -39,11 +39,6 @@ function Home() {
                 <Grid xs={12} className='produtos'>
                     <TabProduto />
                 </Grid>
-            <Grid container direction="row" justifyContent="center" alignItems="center" style={{ backgroundColor: "#14c3a2" }}>
-                <Grid alignItems="center" item xs={6}>
-                </Grid>
-
-            </Grid>
         </>
     );
 }

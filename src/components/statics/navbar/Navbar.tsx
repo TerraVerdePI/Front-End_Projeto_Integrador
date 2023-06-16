@@ -1,7 +1,6 @@
 import { AppBar, Toolbar, Box, Typography, Grid, Button } from '@mui/material';
 import './Navbar.css';
-import { Link, useNavigate } from 'react-router-dom';
-
+import { Link, useLocation, useNavigate } from 'react-router-dom'; 
 import { useDispatch, useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
 import { addToken } from "../../../store/tokens/actions";
@@ -15,7 +14,9 @@ function Navbar() {
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
   );
-
+  
+  const location = useLocation();
+  const currentUrl = location.pathname;
   const dispatch = useDispatch()
   const navigate = useNavigate();
 
@@ -43,12 +44,10 @@ function Navbar() {
 
     navbarComponent = (
       <AppBar position="static" className="navbar">
-        <Toolbar variant="dense">
+        <Toolbar >
           <Grid container justifyContent={'space-between'} className='fonte' direction={"row"}>
             <Box style={{ cursor: 'pointer' }}>
-              <Typography variant="h5" color="" className='fonte'>
-                <img src="https://imgur.com/XQrHceV" alt="" className='imagem' onClick={logout}/>
-              </Typography>
+            <img src="https://i.imgur.com/moTZhZy.png" alt="" className='imagem' />
             </Box>
             <Box display="flex" justifyContent="center" alignItems={"center"}>
               <Link to="/home" style={{ textDecoration: 'none' }}>
@@ -58,10 +57,10 @@ function Navbar() {
                   </Typography>
                 </Box>
               </Link>
-              <Link to="/produtos" style={{ textDecoration: 'none' }}>
+              <Link to="/sobre" style={{ textDecoration: 'none' }}>
                 <Box mx={1} style={{ cursor: 'pointer' }}>
                   <Typography variant="h6" className='linha' color="black">
-                    Meus Produtos
+                    Sobre Nós
                   </Typography>
                 </Box>
               </Link>
@@ -81,9 +80,6 @@ function Navbar() {
                 < NotificationsIcon color="primary" />
               </Box>
               <Box mx={1} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
-              <Link to='/formularioProduto'>
-                <AddCircleSharpIcon color="primary" />
-                </Link>
                 </Box>
               <Box mx={1} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
                 <AvatarPerfil />
@@ -93,17 +89,17 @@ function Navbar() {
         </Toolbar>
       </AppBar>
     )
-  } else {
+  } else if( currentUrl == '/login' || currentUrl =='/cadastro'){
+    navbarComponent = (null)
+  }else {
       navbarComponent = (
         <AppBar position="static" className="navbar">
-        <Toolbar variant="dense">
+        <Toolbar >
           <Grid container justifyContent={'space-between'} className='fonte' direction={"row"}>
-            <Box style={{ cursor: 'pointer' }}>
-              <Typography variant="h5" color="" className='fonte'>
-                <img src="https://imgur.com/XQrHceV" alt="" className='imagem' />
-              </Typography>
+            <Box >
+                <img src="https://i.imgur.com/moTZhZy.png" alt="" className='imagem' />
             </Box>
-            <Box display="flex" justifyContent="center" alignItems={"center"}>
+            <Box display="flex" justifyContent="center" alignItems={"center"} style={{marginLeft:'80px'}}>
               <Link to="/" style={{ textDecoration: 'none' }}>
                 <Box mx={1} style={{ cursor: 'pointer' }}>
                   <Typography variant="h6" className='linha' color="black">

@@ -14,14 +14,17 @@
     
 }
 .imagem {
-    width: 80px; /* Defina o tamanho desejado para a largura */
-    height: auto; /* A altura será ajustada automaticamente proporcionalmente à largura */
+    width:150px!important; /* Defina o tamanho desejado para a largura */
+    height: auto!important; /* A altura será ajustada automaticamente proporcionalmente à largura */
+
   }
   .navbar{
-    background-color: rgba(0, 0, 0, 0)!important;
+    background-color: #ffffff!important;
+    box-shadow: none!important;
 
   }
   .linha:hover {
     color: #527146!important;
+
   }
   .fonte{}

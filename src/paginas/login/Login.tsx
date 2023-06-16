@@ -98,10 +98,10 @@ function Login() {
     return (
         
         <Grid container direction='row' justifyContent='center' alignItems='center'>
-            <Grid xs={6} style={{
+            <Grid xs={6} style={{ marginLeft:'-80px',
                 
                 backgroundImage: `url(https://i.imgur.com/fOHICkH.jpg)`,
-                backgroundRepeat: 'no-repeat', width: '100vh', minHeight: '120vh', backgroundSize: 'cover', backgroundPosition: 'center'    
+                backgroundRepeat: 'no-repeat', width: '150vh', minHeight: '120vh', backgroundSize: 'cover', backgroundPosition: 'center'    
             }}>
 
             </Grid>
@@ -131,7 +131,7 @@ function Login() {
                         </Typography>
                         </Box>
                         <Box marginTop={5} width={400}>
-                        <Typography variant='subtitle2' style={{marginBottom:-15}}>
+                        <Typography variant='subtitle2' style={{marginBottom:-5}}>
                             Faça login para continuar</Typography>
                         <TextField id='usuario' label='Usuário' variant='outlined' name='usuario' margin='normal' fullWidth value={usuarioLogin.usuario} onChange={(event: ChangeEvent<HTMLInputElement>) => updateModel(event)}> </TextField>
                         <TextField id='senha' label='Senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth value={usuarioLogin.senha} onChange={(event: ChangeEvent<HTMLInputElement>) => updateModel(event)} > </TextField>
