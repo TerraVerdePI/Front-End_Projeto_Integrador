@@ -24,7 +24,7 @@
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, 1fr); /* Atualizado para três colunas */
   grid-gap: 10px;
   margin-bottom: 20px; /* Add margin-bottom to create space between card-grid and textoParceiro */
 }
@@ -52,10 +52,39 @@
   border: 2px solid rgba(1, 65, 43, 0.521);
   padding: 2px;
   box-shadow: 4px 4px 3px rgba(44, 44, 44, 0.3);
+  margin-left: 65px;
+  margin-right: 25px;
+  margin-top: 100px;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .card-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    margin-right: 25px;
+  }
+  .imgDireita {
+    margin: 10px auto;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 834px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    margin-right: 20px;
+    margin-left: 15px;
+  }
+
+  .imgDireita {
+    margin: 10px auto;
   }
 }

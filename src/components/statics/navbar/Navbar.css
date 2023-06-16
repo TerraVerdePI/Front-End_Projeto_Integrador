@@ -16,6 +16,7 @@
 .imagem {
     width:150px!important; /* Defina o tamanho desejado para a largura */
     height: auto!important; /* A altura será ajustada automaticamente proporcionalmente à largura */
+
   }
   .navbar{
     background-color: #ffffff!important;

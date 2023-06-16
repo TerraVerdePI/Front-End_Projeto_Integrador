@@ -47,7 +47,7 @@ function Navbar() {
         <Toolbar >
           <Grid container justifyContent={'space-between'} className='fonte' direction={"row"}>
             <Box style={{ cursor: 'pointer' }}>
-
+            <img src="https://i.imgur.com/moTZhZy.png" alt="" className='imagem' />
             </Box>
             <Box display="flex" justifyContent="center" alignItems={"center"}>
               <Link to="/home" style={{ textDecoration: 'none' }}>
