@@ -12,16 +12,14 @@ function LadingPage() {
         <>
             
             <CarouselHome />
-            
-          
+        
             <ListaProduto exibirBotoes={false} />
             
             <Parceiros />
-           
+
             <Sobre />
             
             <Perguntas />
-          
         </>
     )
 }

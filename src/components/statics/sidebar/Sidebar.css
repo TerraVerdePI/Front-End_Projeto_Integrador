@@ -1,0 +1,8 @@
+.imagem {
+    max-width: 38px; 
+}
+
+.imagem { display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}

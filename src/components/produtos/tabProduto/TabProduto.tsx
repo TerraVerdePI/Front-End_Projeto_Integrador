@@ -16,10 +16,6 @@ function TabProduto() {
     <>
       <TabContext value={value}>
         <AppBar position="static" className='tabProduto'>
-          <Tabs centered indicatorColor="secondary" onChange={handleChange}>
-            <Tab label="Todas os produtos" value="1" className='textTab'/>
-            <Tab label="Sobre nós" value="2" className='textTab' />
-          </Tabs>
         </AppBar>
         <TabPanel value="1" >
           <Box justifyContent="center">

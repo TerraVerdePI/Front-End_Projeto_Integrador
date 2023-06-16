@@ -3,16 +3,36 @@ import { Typography, Grid } from '@material-ui/core';
 import { Box } from '@mui/material';
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
+import { useLocation } from "react-router-dom";
 
 function Footer() {
 
+    const location = useLocation();
+    const currentUrl = location.pathname;
     const token = useSelector<TokenState, TokenState["tokens"]>(
         (state) => state.tokens
     );
 
     var footerComponent;
 
-    if (token == "") {
+    if (token !== "") {
+        footerComponent = <Grid container direction="row"  alignItems="flex-start">
+        <Grid alignItems="flex-start" item xs={12}>
+        <Box style={{ backgroundColor: "#595b5a", height: "52px" }}>
+        <Box display="flex" alignItems="flex-start" marginLeft={2}>
+            <img src="https://i.imgur.com/x9HTU0N.png"style={{ fontSize: 60, width:"50px", marginLeft:2, marginRight:15}} />
+        
+                    <Typography align="center" style={{ color: "white", fontSize:"16px", alignSelf:"center"}} >® MARCA REGISTRADA. Todos os direitos reservados</Typography>
+                    </Box>
+                    </Box>
+                    
+            </Grid>
+            </Grid> 
+        
+
+    } else if( currentUrl == '/login' || currentUrl =='/cadastro'){
+        footerComponent = (null)
+    } else{
         footerComponent = <Grid container direction="row" justifyContent="center" alignItems="center">
         <Grid alignItems="center" item xs={12}>
             <Box style={{ backgroundColor: "#595b5a", height: "200px" }}>
@@ -51,20 +71,6 @@ e de qualidade a preços acessíveis</Typography>
             </Box>
         </Grid>
     </Grid>
-
-    }else{
-        footerComponent = <Grid container direction="row"  alignItems="flex-start">
-        <Grid alignItems="flex-start" item xs={12}>
-        <Box style={{ backgroundColor: "#595b5a", height: "52px" }}>
-        <Box display="flex" alignItems="flex-start" marginLeft={2}>
-            <img src="https://i.imgur.com/x9HTU0N.png"style={{ fontSize: 60, width:"50px", marginLeft:2, marginRight:15}} />
-        
-                    <Typography align="center" style={{ color: "white", fontSize:"16px", alignSelf:"center"}} >® MARCA REGISTRADA. Todos os direitos reservados</Typography>
-                    </Box>
-                    </Box>
-                    
-            </Grid>
-            </Grid> 
     }
 
     
