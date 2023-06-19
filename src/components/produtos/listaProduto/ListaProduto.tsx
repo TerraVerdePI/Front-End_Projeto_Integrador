@@ -137,13 +137,20 @@ function ListaProduto({ exibirBotoes = true }) {
       </Grid>
       </Box>
       <div  style={{textAlign: 'center'}}>
-      <Button
+      {token !== ''?<Button
         onClick={() => setQuantidadeCards(quantidadeCards + 9)}
         style={{margin: 10}}
         className='botao-carregarMais'
       >
           Mais produtos
+      </Button>:<Link to={'/login'}><Button
+
+        style={{margin: 10}}
+        className='botao-carregarMais'
+      >
+          Ver todos os produtos
       </Button>
+      </Link>}
       </div>
     </>
   )

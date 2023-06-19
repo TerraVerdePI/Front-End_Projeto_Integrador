@@ -111,7 +111,7 @@ function Login() {
             <Grid item xs={1}>
             <img src="https://i.imgur.com/RWFhDaM.png" alt="Logo Terra Verde" className='logoImage'/>
             </Grid>
-            <Grid item xs={2} style={{marginLeft:120}}>
+            <Grid item xs={2} style={{marginLeft:20}}>
                 <Typography style={{marginBottom:-5}}>
                     Terra 
                 </Typography>

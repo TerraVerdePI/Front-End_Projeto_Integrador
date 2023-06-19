@@ -1,147 +1,38 @@
-* {
-    margin-right: 0px !important;
-    margin-left: 0px !important;
-  }
-  
-  *,
-  *:before,
-  *:after {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
-  
-  .img_listCart {
-    text-align: center !important;
-    width: 200px !important;
-    height: 200px !important;
-    border-radius: 20px !important;
-  }
-  
-  .container-carrinho {
-    box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.251) !important;
-    width: 50%;  background: rgba(160, 167, 151, 0.15);
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.178);
-    box-shadow: 0 0 40px rgba(184, 183, 187, 0.708);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.318));
-    border-radius: 10px;
-    border: 2px solid rgba(255, 255, 255, 0.361);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    width: 80%;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    flex-direction: column !important;
-    min-height: 10%;
-    margin-top: 2% !important;
-  }
-  .centralizar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2% !important;
-  }
-  
-  .space-between {
-    display: flex;
-    justify-content: space-between !important;
-  }
-  
-  .class1 {
-    flex-direction: column;
-  }
-  
-  .class2 {
-    width: 100%;
-  }
-  
-  .class3 {
-    display: flex;
-  }
-  
-  .class4 {
-    display: flex;
-    align-items: end !important;
-    justify-content: flex-end;
-    margin-right: 0px !important;
-  }
-  
-  .class5 {
-    width: 80%;
-  }
-  
-  .gap {
-    gap: 5%;
-  }
-  
-  .class-borda {
-    display: flex;
-    border-bottom: solid 1px black;
-  }
-  
-  .alinhar {
-    align-items: right;
-  }
-  
-  .min-height {
-    min-height: 90vh !important;
-  }
-  
-  .fonte {
-    font-family: "Inter", sans-serif !important;
-    font-style: normal !important;
-    font-weight: 700 !important;
-    font-size: 30px !important;
-    line-height: 58px !important;
-    color: rgba(44, 71, 0, 0.9);
-  }
-  
-  .fonte2 {
-    font-family: "Inter", sans-serif !important;
-    font-style: normal !important;
-    font-weight: 700 !important;
-    font-size: 18px !important;
-    line-height: 58px !important;
-    color: rgba(44, 71, 0, 0.9);
-  }
-  
-  .fonte3 {
-    flex-direction: row;
-    font-family: "Inter", sans-serif !important;
-    font-style: normal !important;
-    font-weight: 700 !important;
-    font-size: 30px !important;
-    line-height: 58px !important;
-    display: flex;
-    align-items: end;
-    text-align: end;
-    color: rgba(68, 37, 0, 0.95);
-    margin-left: 0% !important;
-  }
-  
-  .fonte4 {
-    font-family: "Inter", sans-serif !important;
-    font-style: normal !important;
-    font-weight: 700 !important;
-    font-size: 18px !important;
-    line-height: 58px !important;
-    display: flex;
-    align-items: end;
-    text-align: end;
-    color: rgba(68, 37, 0, 0.95);
-  }
-  
-  .btnComprar {
-    background: rgba(147, 182, 103, 0.59) !important;
-    border-radius: 20px !important;
-  }
-  
-  .btnCancelar {
-    background: rgba(68, 37, 0, 0.95) !important;
-    border-radius: 20px !important;
-  }
-  
-  .flex-direction{
-    flex-direction: row !important;
-  }
+.bg-carrinho{
+  background-color: var(--rosa2) !important;
+  padding: 40px 100px;
+  border-radius: 30px;
+}
+.container{
+  background-color: var(--rosa1) !important;
+}
+.image{
+  width: 100%;
+  max-width: 350px;
+  border-radius: 20px;
+	transition: 0.5s;
+}
+.image:hover{
+	scale: 1.2;
+	transition: 0.5s;
+}
+.cardProduto{
+  border-bottom: 1px solid var(--marrom1);
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+.mg-bt-60{
+  margin-bottom: 60px !important;
+}
+.mg-bt-20{
+  margin-bottom: 20px !important;
+}
+.text{
+  color: var(--marrom1);
+}
+.valor-total{
+  margin-top: 40px;
+}
+.bold{
+	font-weight: 500;
+}

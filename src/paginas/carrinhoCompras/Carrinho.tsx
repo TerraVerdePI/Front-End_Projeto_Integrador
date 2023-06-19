@@ -9,7 +9,7 @@ import {toast} from 'react-toastify'
 
 function Carrinho() {
 	  useEffect(() => {
-    document.title = 'PeriFeira - Cesta Atual';
+    document.title = 'Carrinho de Compras';
   }, []);
   
 	let navigate = useNavigate();
@@ -32,7 +32,6 @@ function Carrinho() {
 
 	const contagemItens = {};
 	carrinho.forEach(item => {
-  // Verifique se o item já está no objeto de contagem
   if (contagemItens[item.id]) {
     contagemItens[item.id]++;
   } else {
@@ -47,14 +46,13 @@ function Carrinho() {
     <>
       <Grid className='container' justifyContent='center' container>
         <Grid justifyContent='center' className='bg-carrinho' direction='row' item xs={8}>
-          <Typography className='text mg-bt-60 bold' align='center' variant='h4'>Cesta atual</Typography>
+          <Typography className='text mg-bt-60 bold' align='center' variant='h4'>Seus Itens</Typography>
 					
     {carrinhoUnico.map((item, index) => (
       <Box className="cardProduto" display="flex" justifyContent="space-between" key={index}>
         <Grid xs={4} item>
           <Box>
             <img className="image" src={item.foto} alt="" />
-            {/* Adicione o badge com a contagem de quantidade */}
             {contagemItens[item.id] && (
               <Badge badgeContent={contagemItens[item.id]}/>
             )}
