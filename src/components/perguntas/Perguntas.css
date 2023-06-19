@@ -1,16 +1,21 @@
 .marginQna{
     margin: 20px!important;
-    margin-left: 15px!important;
-    margin-right: 15px!important;
+    margin-left: 25px!important;
+    margin-right: 25px!important;
+}
+
+.marginBg{
+    margin-top: 40px!important;
+    margin-bottom: 40px!important;
 }
 
 .border{
     border-radius: 15px!important;
-    background-color: rgb(100, 100, 100);
+    background-color: rgba(255, 255, 255, 0.829)!important;
 }
 
 .background{
-    background-color: rgb(138, 138, 138);
+    background-color: rgba(143, 143, 143, 0.726);
     border-radius: 10px;
 }
 
@@ -20,4 +25,8 @@
 
 .sub-titulo-perguntas{
     padding-right: 10px;
+}
+
+.questions{
+    margin-bottom: 60px;
 }

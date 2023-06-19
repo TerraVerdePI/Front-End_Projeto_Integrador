@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import {useLocation} from 'react-router-dom'
 import { Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
 import { Box, Grid } from '@mui/material';
 import './ListaProduto.css';
@@ -8,6 +9,7 @@ import { busca } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import Input from '@mui/joy/Input';
+
 
 function ListaProduto({ exibirBotoes = true }) {
   const [produtos, setProdutos] = useState<Produto[]>([])
@@ -40,18 +42,21 @@ function ListaProduto({ exibirBotoes = true }) {
     navigate(`/produtos/${produtoId}`);
   };
 
+
+
+
   return (
     <>
       
-      
-      <Input placeholder="Buscar Produtos" 
+      {token !== '' ? <Input placeholder="Buscar Alimentos, Produtores, Cursos, e muito mais ..." 
       type="text"
       value={termoBusca}
       onChange={(e) => setTermoBusca(e.target.value)}
       className='input-busca'
       size="md"
       
-      />
+      /> : <Box display={'flex'} flexDirection={'column'} justifyContent={'center'} textAlign={'center'} style={{marginBottom:'30px'}}><Typography className='subTitle'>Escolha dos Consumidores</Typography><Typography className='title'>Nossos Produtos</Typography></Box>}
+      
       <Box display="flex" justifyContent="center">
       <Grid container spacing={2} xs={12} >
       {
@@ -60,11 +65,11 @@ function ListaProduto({ exibirBotoes = true }) {
         .slice(0, quantidadeCards)
         .map(produto => (
           <Grid item xs={12} sm={6} md={4} key={produto.id}>
-          <Box m={2} >
-            <Card variant="outlined" style={{ height: "100%" }}>
+          <Box m={2}>
+            <Card variant="outlined" style={{ height: "100%", maxHeight: '490px', minHeight:'490px' }}>
               <CardContent style={{ display: "flex", flexDirection: "column" }}>
                 <Typography color="textSecondary" gutterBottom>
-                  Produtos
+                  {produto.categoria?.descricao}
                 </Typography>
                 <Link to={`/produtos/${produto.id}`} className="text-decorator-none">
                 <img    className='foto-produto'
@@ -78,18 +83,18 @@ function ListaProduto({ exibirBotoes = true }) {
                 </Typography>
                 </Link>
                 <Typography variant="body2" component="p">
-                        {produto.descricao.length > 100 ? produto.descricao.substr(0, 100) + '... ' : produto.descricao}
+                        {produto.descricao.length > 60 ? produto.descricao.substr(0, 60) + '... ' : produto.descricao}
                         <Link to={`/produtos/${produto.id}`} className="text-decorator-none">
                           <Typography variant="body2" className='saiba' >
                             Saiba mais
-                          </Typography>
+                          </Typography>             
                         </Link>
                       </Typography>
-                <Typography variant="body2" component="p">
-                  {produto.categoria?.descricao}
-                </Typography>
-                <Box display="flex" justifyContent="space-between" alignItems="center">
-                        <Typography variant="h6" component="p">
+                      <Typography variant="body2" component="p">
+                          Fornecedor: {produto.usuario?.nome}
+                      </Typography>
+                <Box display="flex" justifyContent="space-between" alignItems="flex-end" >
+                        <Typography variant="h6" component="p" >
                           Preço: R$ {produto.preco}
                         </Typography>
                         <button className='btn-12'
@@ -97,12 +102,9 @@ function ListaProduto({ exibirBotoes = true }) {
                         >
                           <span>CLIQUE AQUI</span>
                           <span>COMPRAR</span>
-                         
                         </button>
                       </Box>
-                      <Typography variant="body2" component="p">
-                          Fornecedor: {produto.usuario?.nome}
-                      </Typography>
+                      
 
               </CardContent>
               {exibirBotoes && (
@@ -136,13 +138,11 @@ function ListaProduto({ exibirBotoes = true }) {
       </Box>
       <div  style={{textAlign: 'center'}}>
       <Button
-        variant="contained"
         onClick={() => setQuantidadeCards(quantidadeCards + 9)}
         style={{margin: 10}}
         className='botao-carregarMais'
-        color='inherit'
       >
-          Carregar Mais
+          Mais produtos
       </Button>
       </div>
     </>

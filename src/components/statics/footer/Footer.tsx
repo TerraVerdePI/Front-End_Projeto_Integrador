@@ -17,8 +17,8 @@ function Footer() {
 
     if (token !== "") {
         footerComponent = <Grid container direction="row"  alignItems="flex-start">
-        <Grid alignItems="flex-start" item xs={12}>
-        <Box style={{ backgroundColor: "#595b5a", height: "52px" }}>
+        <Grid alignItems="flex-start" item xs={12} style={{}}>
+        <Box style={{ backgroundColor: "#595b5a", height: "52px" ,marginLeft:'25px'}}>
         <Box display="flex" alignItems="flex-start" marginLeft={2}>
             <img src="https://i.imgur.com/x9HTU0N.png"style={{ fontSize: 60, width:"50px", marginLeft:2, marginRight:15}} />
         
