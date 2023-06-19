@@ -22,6 +22,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Sidebar from './components/statics/sidebar/Sidebar';
 import { TokenState } from './store/tokens/tokensReducer';
+import Carrinho from './paginas/carrinhoCompras/Carrinho';
 
 
 
@@ -52,6 +53,8 @@ function App() {
                 <Route path='/sobre' element={<Sobre />} />
 
                 <Route path="/cadastro" element={<CadastroUsuario />} />
+
+                <Route path="/carrinho" element={<Carrinho />} />
 
                 <Route path="/categorias" element={<ListaCategoria />} />
 

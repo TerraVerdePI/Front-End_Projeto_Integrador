@@ -66,7 +66,7 @@ function ListaProduto({ exibirBotoes = true }) {
         .map(produto => (
           <Grid item xs={12} sm={6} md={4} key={produto.id}>
           <Box m={2}>
-            <Card variant="outlined" style={{ height: "100%", maxHeight: '490px', minHeight:'490px' }}>
+          <Card variant="outlined" style={{ height: "100%", maxHeight: '490px', minHeight:'490px' }}>
               <CardContent style={{ display: "flex", flexDirection: "column" }}>
                 <Typography color="textSecondary" gutterBottom>
                   {produto.categoria?.descricao}

@@ -6,7 +6,7 @@ import { TokenState } from '../../../store/tokens/tokensReducer';
 import Categoria from '../../../model/Categoria';
 import Usuario from '../../../model/Usuario';
 import { busca, post, put } from '../../../services/Service';
-import { addToken } from '../../../store/tokens/actions';
+import { addToken } from '../../../store/tokens/Action';
 import './PaginaProduto.css'
 import Button from '@mui/material/Button';
 

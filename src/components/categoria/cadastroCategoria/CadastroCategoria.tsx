@@ -1,5 +1,5 @@
 import React, { useState, useEffect, ChangeEvent } from 'react'
-import { Container, Typography, TextField, Button } from "@material-ui/core"
+import { Container, Typography, TextField, Button, Box } from "@material-ui/core"
 import Categoria from '../../../model/Categoria';
 import { buscaId, post, put } from '../../../services/Service';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -111,15 +111,17 @@ function CadastroCategoria() {
     }
 
     return (
+        <Box marginBottom={'300px'}>
         <Container maxWidth="sm" className="topo">
             <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro Categoria</Typography>
+                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Cadastrar Categoria</Typography>
                 <TextField value={categoria.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedCategoria(e)} id="descricao" label="descricao" variant="outlined" name="descricao" margin="normal" fullWidth />
                 <Button type="submit" variant="contained" color="primary">
                     Finalizar
                 </Button>
             </form>
         </Container>
+        </Box>
     )
 }
 

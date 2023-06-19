@@ -6,6 +6,7 @@ import Parceiros from '../parceiros/Parceiros'
 import Sobre from '../sobre/Sobre'
 import { Box, Grid } from '@material-ui/core'
 import './LadingPage.css'
+import { Margin } from '@mui/icons-material'
 
 
 function LadingPage() {
@@ -13,9 +14,9 @@ function LadingPage() {
         <>
             
             <CarouselHome />
-        
-            <ListaProduto exibirBotoes={false} />
             
+            <ListaProduto exibirBotoes={false} />
+
             <Parceiros />
 
             <Sobre />

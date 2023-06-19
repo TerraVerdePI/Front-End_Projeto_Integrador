@@ -2,7 +2,7 @@ import React from 'react'
 import * as FaIcons from 'react-icons/fa' 
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { addToken } from '../../../store/tokens/actions';
+import { addToken } from '../../../store/tokens/Action';
 import { toast } from 'react-toastify';
 import './Sidebar.css'
 
