@@ -60,8 +60,9 @@ export default function CustomizedAccordions() {
       <Typography variant='h5'  style={{ textAlign: 'center', fontWeight:'bold' }}>Perguntas Frequentes</Typography>
       <Typography variant='subtitle1' className='subtitulo-perguntas' style={{ textAlign: 'center' }}>& Respostas</Typography>
       </Box>
-    <Grid container direction={'row'} display={'flex'} justifyContent={'center'} alignItems={'center'} >
+    <Grid container direction={'row'} display={'flex'} justifyContent={'center'} alignItems={'center'} className='questions'>
         <Grid xs={9} className="background">
+          <Box className='marginBg'>
           <Grid item>
             <Box className='marginQna'>
               <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} className="border">
@@ -150,6 +151,7 @@ export default function CustomizedAccordions() {
               </Accordion>
             </Box>
           </Grid>
+          </Box>
         </Grid>
       </Grid>
     </>

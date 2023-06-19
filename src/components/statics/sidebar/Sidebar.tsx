@@ -13,6 +13,7 @@ import Footer from '../footer/Footer'
 import Produto from '../../../model/Produto'
 import { toast } from 'react-toastify'
 import { addToken } from '../../../store/tokens/actions'
+import * as FaIcons from 'react-icons/fa'
 
 const SidebarMenu = styled.div`
   width: 40px;
@@ -22,6 +23,9 @@ const SidebarMenu = styled.div`
   top: 0;
   left: 0;
   border-radius:0px 10px 10px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `
 
 const MenuItems = styled.li`
@@ -31,6 +35,7 @@ const MenuItems = styled.li`
   justify-content: center;
   height: 90px;
   margin-right:10px;
+  
 `
 
 const MenuItemLinks = styled(Link)`
@@ -89,7 +94,7 @@ const Sidebar: React.FunctionComponent = () => {
 
   function logout() {
     
-    toast.success('Usuário deslogado com sucesso!', {
+    toast.success('UsuÃ¡rio deslogado com sucesso!', {
       position: "top-right",
       autoClose: 2000,
       hideProgressBar: false,
@@ -112,6 +117,7 @@ const Sidebar: React.FunctionComponent = () => {
       <Grid container> 
         <Grid item xs={1}>
           <SidebarMenu>
+              <div>
               <Typography variant="h5"  className='fonte'>
                 <img src="https://i.imgur.com/x9HTU0N.png" alt="" className='imagem' />
               </Typography>
@@ -124,6 +130,12 @@ const Sidebar: React.FunctionComponent = () => {
                 </MenuItems>
               )
             })}
+              </div>
+            <MenuItems>
+                  <Box onClick={logout}>
+                    <FaIcons.FaSignOutAlt className="iconLogout"/>
+                 </Box>
+                </MenuItems>
           </SidebarMenu>
         </Grid>
         <Grid item xs={10}>

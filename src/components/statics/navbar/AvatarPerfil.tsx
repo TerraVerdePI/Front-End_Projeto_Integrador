@@ -4,6 +4,12 @@ import Badge from '@mui/material/Badge';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { buscaId } from '../../../services/Service';
+import { TokenState } from '../../../store/tokens/tokensReducer';
+import Usuario from '../../../model/Usuario';
+
+
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
@@ -35,6 +41,48 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 }));
 
 export default function BadgeAvatars() {
+    const userId = useSelector<TokenState, TokenState['id']>((state) => state.id);
+const token = useSelector<TokenState, TokenState['tokens']>(
+    (state) => state.tokens
+  );
+
+const [usuario, setUsuario] = React.useState<Usuario>({
+    id: +userId,
+    nome: '',
+    usuario: '',
+    senha: '',
+    foto: '',
+    data_nascimento: '',
+    cpf: '',
+    cnpj: '',
+    cep: '',
+    endereco: '',
+    status_eco: '',
+    produto: null
+});
+
+async function getUsuario() {
+  try {
+    await buscaId(`/usuarios/${usuario.id}`, setUsuario, {
+      headers: {
+        Authorization: token,
+      },
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+React.useEffect(() => {
+  getUsuario();
+}, []);
+
+React.useEffect(() => {
+  setUsuario({
+    ...usuario,
+    senha: ''
+  })
+}, [usuario.usuario])
     return (
         <Stack direction="row" spacing={2}>
             <StyledBadge
@@ -43,9 +91,10 @@ export default function BadgeAvatars() {
                 variant="dot"
             >
                 <Link to={'/perfil'} style={{textDecoration:'none'}}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg"/>
+                <img alt="Remy Sharp" src={usuario.foto} style={{width: '3vw', border: '2px solid green', padding: '1px', borderRadius:100}} />
                 </Link>
             </StyledBadge>
         </Stack>
     );
 }
+

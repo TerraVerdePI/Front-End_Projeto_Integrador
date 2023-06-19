@@ -1,5 +1,12 @@
 import React from 'react'
 import * as FaIcons from 'react-icons/fa' 
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { addToken } from '../../../store/tokens/actions';
+import { toast } from 'react-toastify';
+import './Sidebar.css'
+
+
 
 export const SidebarData = [
     
@@ -10,9 +17,5 @@ export const SidebarData = [
     {
         path: '/formularioProduto',
         icon: <FaIcons.FaPlusSquare />
-    },
-    {
-        path: '/login',
-        icon: <FaIcons.FaSignOutAlt />
     }
 ]

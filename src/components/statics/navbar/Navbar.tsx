@@ -20,7 +20,7 @@ function Navbar() {
   const dispatch = useDispatch()
   const navigate = useNavigate();
 
-  function logout() {
+  function logout() { 
     
     toast.success('Usuário deslogado com sucesso!', {
       position: "top-right",
@@ -46,8 +46,8 @@ function Navbar() {
       <AppBar position="static" className="navbar">
         <Toolbar >
           <Grid container justifyContent={'space-between'} className='fonte' direction={"row"}>
-            <Box style={{ cursor: 'pointer' }}>
-            <img src="https://i.imgur.com/moTZhZy.png" alt="" className='imagem' />
+            <Box style={{ cursor: 'pointer', marginLeft:'120px' }}>
+
             </Box>
             <Box display="flex" justifyContent="center" alignItems={"center"}>
               <Link to="/home" style={{ textDecoration: 'none' }}>

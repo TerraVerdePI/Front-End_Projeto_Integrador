@@ -3,18 +3,20 @@
 }
 
 .input-busca {
-    width: 500px;
+    width: 800px;
     display: block;
     margin: 0 auto;
-    margin-top: 10px;
+    margin-top: 60px;
+    margin-bottom: 60px;
     background-color: #ffffff!important;
-    border-color: #9fc490!important;
+    border-color: #979797!important;
+    border-radius: 60px!important;
     
 
 }
 
 .input-busca::placeholder{
-  color: #1c3b0c!important;
+  color: #000000!important;
 }
 
 .btn-12 {
@@ -98,6 +100,8 @@
 .saiba{
   color: #37701b;
   font-weight: bold!important;
+  margin-top: 10px!important;
+  margin-bottom: 15px!important;
 }
 
 .produtoNome{
@@ -108,4 +112,16 @@
 .botao-carregarMais{
   background-color: #465362!important;
   color: white  !important;
+  border-radius: 40px!important;
+  width: 240px!important;
 }
+
+.subTitle{
+  font-size: 14px!important;
+}
+
+.title{
+  font-size: 24px!important;
+  font-weight: 600!important;
+}
+

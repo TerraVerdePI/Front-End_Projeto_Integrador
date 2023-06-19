@@ -5,6 +5,7 @@ import ListaProduto from '../../components/produtos/listaProduto/ListaProduto'
 import Parceiros from '../parceiros/Parceiros'
 import Sobre from '../sobre/Sobre'
 import { Box, Grid } from '@material-ui/core'
+import './LadingPage.css'
 
 
 function LadingPage() {
