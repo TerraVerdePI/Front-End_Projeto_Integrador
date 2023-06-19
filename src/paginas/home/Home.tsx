@@ -36,7 +36,7 @@ function Home() {
     return (
         < >
 
-                <Grid xs={12} className='produtos'style={{marginLeft: '80px'}}>
+                <Grid xs={12} className='produtos'style={{marginLeft: '10px'}}>
                     <TabProduto />
                 </Grid>
         </>
