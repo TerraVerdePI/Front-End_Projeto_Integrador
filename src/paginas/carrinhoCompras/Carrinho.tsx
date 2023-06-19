@@ -8,10 +8,7 @@ import { TokenState } from '../../store/tokens/tokensReducer'
 import {toast} from 'react-toastify'
 
 function Carrinho() {
-	  useEffect(() => {
-    document.title = 'Carrinho de Compras';
-  }, []);
-  
+
 	let navigate = useNavigate();
 	let valor = 0
 	const dispatch = useDispatch()
@@ -44,48 +41,68 @@ function Carrinho() {
 
   return (
     <>
-      <Grid className='container' justifyContent='center' container>
-        <Grid justifyContent='center' className='bg-carrinho' direction='row' item xs={8}>
-          <Typography className='text mg-bt-60 bold' align='center' variant='h4'>Seus Itens</Typography>
-					
-    {carrinhoUnico.map((item, index) => (
-      <Box className="cardProduto" display="flex" justifyContent="space-between" key={index}>
-        <Grid xs={4} item>
-          <Box>
-            <img className="image" src={item.foto} alt="" />
-            {contagemItens[item.id] && (
-              <Badge badgeContent={contagemItens[item.id]}/>
-            )}
-          </Box>
-        </Grid>
-        <Grid item xs={5}>
-          <Box>
-            <Typography className="bold">{item.nome}</Typography>
-            <Typography><br/>{item.descricao}</Typography>
-          </Box>
+      <Grid className='container' justifyContent='flex-start' container>
+      <Grid justifyContent='center' className='brd-bt' direction='row' item xs={12}>
+      <Box className='endAlign'>
+          <Typography className='text bold' variant='h4'>Seus Itens</Typography>
+					</Box>
+          </Grid>
+        <Grid justifyContent='center' className='bg-carrinho' direction='row' item xs={12}>
+        <Box className="cardProduto" display="flex" justifyContent="space-between" flexDirection="row">
+        <Grid xs={2} item>
+        <Typography >Imagem</Typography>
         </Grid>
         <Grid item xs={2}>
-          <Box>
+            <Typography >Nome</Typography>
+        </Grid>
+        <Grid item xs={2}>
+        <Typography >Descrição</Typography>
+        </Grid>
+        <Grid item xs={2}>
+        <Typography >Quantidade</Typography>
+        </Grid>
+        <Grid item xs={2}>
+            <Typography className="bold">Preço</Typography>
+        </Grid>
+      </Box>
+    {carrinhoUnico.map((item, index) => (
+      <Box className="cardProduto" display="flex" justifyContent="space-between" alignItems="center"  flexDirection="row" key={index}>
+        <Grid xs={2} item>
+            <img className="image" src={item.foto} alt="" />
+        </Grid>
+        <Grid item xs={2}>
+            <Typography >{item.nome}</Typography>
+        </Grid>
+        <Grid item xs={2}>
+        <Typography>{item.descricao.length > 40 ? item.descricao.substr(0, 40) + '... ' : item.descricao}</Typography>
+        </Grid>
+        <Grid item xs={2} style={{marginLeft:'100px'}}>
+        {contagemItens[item.id] && (
+              <Typography> {contagemItens[item.id]}</Typography>
+            )}
+        </Grid>
+        <Grid item xs={2}>
             <Typography className="bold">R$ {item.preco.toFixed(2).replace('.', ',')}</Typography>
-          </Box>
         </Grid>
       </Box>
     ))}
-          <Box className='valor-total' display='flex' justifyContent='space-between'>
-            <Box>
-              <Typography className='bold mg-bt-20' variant='h5'>Total:</Typography>
+          <Box className='valor-total' display='flex' justifyContent='flex-end' alignItems={'flex-end'} flexDirection={'row'}>
+            <Box className='mg-rt-20 baseline'>
+              <Typography className='bold total' variant='h6'>TOTAL:</Typography>
+              <Box>
+              <Typography className='bold value' variant='h5'>
+							{carrinho.map(item=>{valor += item.preco})}R$ {valor.toFixed(2).replace('.', ',')}</Typography>
+            </Box>
+            </Box>
             <Button className="btn"
 						onClick={() => {
 						dispatch(removeItem([]))
-						toast.success("Cesta criada")
+						toast.success("Compra Finalizada - Obrigado por comprar conosco!")
 						navigate("/loja")
 						}}
-						>Criar sua cesta</Button>
-            </Box>
-            <Box>
-              <Typography className='bold ' variant='h5'>
-							{carrinho.map(item=>{valor += item.preco})}R$ {valor.toFixed(2).replace('.', ',')}</Typography>
-            </Box>
+						>Finalizar Compra</Button>
+            
+            
           </Box>
         </Grid>
       </Grid>

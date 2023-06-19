@@ -6,7 +6,7 @@ import TabProduto from "../../components/produtos/tabProduto/TabProduto";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../store/tokens/tokensReducer";
-import Perguntas from "../../components/perguntas/Perguntas";
+import Perguntas from "../perguntas/Perguntas";
 import { toast } from "react-toastify";
 
 function Home() {

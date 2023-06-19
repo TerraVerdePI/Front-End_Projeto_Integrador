@@ -6,9 +6,11 @@ import { Box, Grid } from '@mui/material';
 import './ListaProduto.css';
 import Produto from '../../../model/Produto';
 import { busca } from '../../../services/Service';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import Input from '@mui/joy/Input';
+import { addToCart } from '../../../store/tokens/Action';
+import { toast } from 'react-toastify';
 
 
 function ListaProduto({ exibirBotoes = true }) {
@@ -42,7 +44,7 @@ function ListaProduto({ exibirBotoes = true }) {
     navigate(`/produtos/${produtoId}`);
   };
 
-
+  const dispatch = useDispatch();
 
 
   return (
@@ -98,7 +100,7 @@ function ListaProduto({ exibirBotoes = true }) {
                           Preço: R$ {produto.preco}
                         </Typography>
                         <button className='btn-12'
-                          
+                         onClick={() => {dispatch(addToCart(produto)); toast.success(`${produto.nome}`+" adicionado ao carrinho")}} 
                         >
                           <span>CLIQUE AQUI</span>
                           <span>COMPRAR</span>

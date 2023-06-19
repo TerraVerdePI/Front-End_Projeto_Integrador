@@ -6,7 +6,7 @@ import { TokenState } from '../../../store/tokens/tokensReducer';
 import Categoria from '../../../model/Categoria';
 import Usuario from '../../../model/Usuario';
 import { busca, post, put } from '../../../services/Service';
-import { addToken } from '../../../store/tokens/Action';
+import { addToCart, addToken } from '../../../store/tokens/Action';
 import './PaginaProduto.css'
 import Button from '@mui/material/Button';
 
@@ -230,12 +230,10 @@ function PaginaProduto() {
                         R$ {produto.preco.toFixed(2)}
                     </Typography>
                     
-                            <button className="btn-comprar"  >
+                            <button onClick={() => {dispatch(addToCart(produto)); toast.success(`${produto.nome}`+" adicionado ao carrinho")}} className="btn-comprar"  >
                                 Comprar
                             </button>
-                            <button className="btn btn-2 btn-sep icon-cart" >
-                                Adicionar ao Carrinho
-                            </button>
+
                         
                         <Box
                         sx={{
