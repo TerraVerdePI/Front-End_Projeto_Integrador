@@ -254,9 +254,6 @@ function Navbar() {
                                     </Link>
                                 </MenuItem>
                             ))}
-                            <MenuItem style={{ display: "block", margin: "10px" }}>
-                                <Typography onClick={goLogout} textAlign="center" color="inherit" style={{ color: 'black' }}>Sair</Typography>
-                            </MenuItem>
                         </Menu>
                     </Box>
                 </Toolbar>
