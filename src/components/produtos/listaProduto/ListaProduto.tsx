@@ -83,7 +83,7 @@ function ListaProduto({ exibirBotoes = true }) {
                 </Typography>
                 </Link>
                 <Typography variant="body2" component="p">
-                        {produto.descricao.length > 60 ? produto.descricao.substr(0, 60) + '... ' : produto.descricao}
+                        {produto.descricao.length > 40 ? produto.descricao.substr(0, 40) + '... ' : produto.descricao}
                         <Link to={`/produtos/${produto.id}`} className="text-decorator-none">
                           <Typography variant="body2" className='saiba' >
                             Saiba mais
