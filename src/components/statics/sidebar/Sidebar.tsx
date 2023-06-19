@@ -94,7 +94,7 @@ const Sidebar: React.FunctionComponent = () => {
 
   function logout() {
     
-    toast.success('UsuÃ¡rio deslogado com sucesso!', {
+    toast.success('Usuário deslogado com sucesso!', {
       position: "top-right",
       autoClose: 2000,
       hideProgressBar: false,

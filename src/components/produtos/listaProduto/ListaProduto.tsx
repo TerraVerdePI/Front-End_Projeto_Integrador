@@ -9,7 +9,7 @@ import { busca } from '../../../services/Service';
 import { useDispatch, useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import Input from '@mui/joy/Input';
-import { addToCart } from '../../../store/tokens/Action';
+import { addToCart, addToken } from '../../../store/tokens/Action';
 import { toast } from 'react-toastify';
 
 
@@ -22,6 +22,10 @@ function ListaProduto({ exibirBotoes = true }) {
 
   const [quantidadeCards, setQuantidadeCards] = useState(9);
   const [termoBusca, setTermoBusca] = useState('');
+
+  function login() {
+    navigate('/login');
+  }
 
   async function getProdutos() {
     await busca("/produtos", setProdutos, {
@@ -99,12 +103,18 @@ function ListaProduto({ exibirBotoes = true }) {
                         <Typography variant="h6" component="p" >
                           Preço: R$ {produto.preco}
                         </Typography>
-                        <button className='btn-12'
+                        {token !== ''?<button className='btn-12'
                          onClick={() => {dispatch(addToCart(produto)); toast.success(`${produto.nome}`+" adicionado ao carrinho")}} 
                         >
                           <span>CLIQUE AQUI</span>
                           <span>COMPRAR</span>
-                        </button>
+                        </button>:<button className='btn-12'
+                         onClick={login} 
+                        >
+                          <span>CLIQUE AQUI</span>
+                          <span>COMPRAR</span>
+                        </button>}
+                        
                       </Box>
                       
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -20,6 +20,8 @@ import { toast } from "react-toastify";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import './Navbar.css'
 import { Height } from "@mui/icons-material";
+import CadastroUsuario from "../../../paginas/cadastroUsuario/CadastroUsuario";
+import Usuario from "../../../model/Usuario";
 
 const settings = [
     {
@@ -100,6 +102,12 @@ function Navbar() {
     const token = useSelector<TokenState, TokenState["tokens"]>(
         (state) => state.tokens
     );
+
+    const userId = useSelector<TokenState, TokenState['id']>((state) => state.id)
+    const [usuarios, setUsuarios] = useState<Usuario[]>([])
+    
+
+
     const dispatch = useDispatch();
     let navigate = useNavigate();
 
@@ -217,17 +225,21 @@ function Navbar() {
                                 </Link>
                             </Button>
                         ))}
+                        
                     </Box>
+                    
                     <Link to={'/carrinho'}>
                     <ShoppingCartIcon color="primary" style={{marginRight: 20 }} />
                     </Link>
-                    <Box sx={{ flexGrow: 0 }}>
                     
+                    <Box sx={{ flexGrow: 0 }}>
+
                         <Tooltip title="Abra configurações">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="Foto Perfil" src=" " />
+                                <Avatar alt="Foto Perfil" src={''} />
                             </IconButton>
                         </Tooltip>
+
                         <Menu
                             sx={{ mt: '45px' }}
                             id="menu-appbar"
