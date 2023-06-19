@@ -5,8 +5,8 @@ import './Sobre.css';
 function Sobre() {
     return (
         <>
-            <Box display='flex' justifyContent='center' style={{ marginTop: '50px' }}>
-                <Typography variant='h4' gutterBottom color='textPrimary' component='h4' textAlign='center' style={{ fontWeight: 'bold' }}>
+            <Box display='flex' justifyContent='center' textAlign='center' style={{ marginTop: '50px' }}>
+                <Typography  className='title'>
                     Sobre o TerraVerde.com
                 </Typography>
             </Box>
