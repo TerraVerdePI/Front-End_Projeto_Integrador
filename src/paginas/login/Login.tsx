@@ -6,7 +6,7 @@ import './Login.css';
 import { UsuarioLogin } from '../../model/UsuarioLogin';
 import { login } from '../../services/Service';
 import { useDispatch } from 'react-redux';
-import { addId, addToken } from '../../store/tokens/actions';
+import { addId, addToken } from '../../store/tokens/Action';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import { Google } from '@mui/icons-material';
@@ -111,7 +111,7 @@ function Login() {
             <Grid item xs={1}>
             <img src="https://i.imgur.com/RWFhDaM.png" alt="Logo Terra Verde" className='logoImage'/>
             </Grid>
-            <Grid item xs={2} style={{marginLeft:20}}>
+            <Grid item xs={2} style={{marginLeft:120}}>
                 <Typography style={{marginBottom:-5}}>
                     Terra 
                 </Typography>

@@ -11,7 +11,7 @@
 }
 
 .txtField{
-    margin-left: 15px;
+    margin-left: 15px!important;
     
 }
 
@@ -35,4 +35,8 @@
 
 .space{
     height: 200px!important;
+}
+
+.txtDecorator{
+    text-decoration: none!important;
 }

@@ -1,0 +1,12 @@
+.btnModal {
+    border-color: white !important;
+    background-color: white !important;
+  }
+
+  .txtDecorator{
+    text-decoration: none!important;
+}
+
+.txtField{
+  margin-left: 15px!important;
+}

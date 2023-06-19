@@ -12,25 +12,19 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import Diversity1Icon from '@mui/icons-material/Diversity1';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
-import { addToken } from "../../../store/tokens/actions";
+import { addToken } from "../../../store/tokens/Action";
 import { toast } from "react-toastify";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import './Navbar.css'
+import { Height } from "@mui/icons-material";
 
 const settings = [
     {
         nome: 'Perfil',
         link: '/perfil'
-    },
-    {
-        nome: 'Categorias',
-        link: '/formularioCategoria'
-    },
-    {
-        nome: 'Recomendações',
-        link: '/'
     }
 ]
 
@@ -85,7 +79,8 @@ function Navbar() {
 
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
     const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
-
+    const location = useLocation();
+    const currentUrl = location.pathname;
 
     const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorElNav(event.currentTarget);
@@ -127,7 +122,7 @@ function Navbar() {
 
     if (token != "") {
 
-        navbarComponent = <AppBar position="static" style={{ backgroundColor: "#ffffff" }}>
+        navbarComponent = <AppBar position="static" style={{ backgroundColor: "#ffffff", boxShadow:'none' }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters style={{marginLeft:40, color: 'black'}}>
                     
@@ -223,7 +218,9 @@ function Navbar() {
                             </Button>
                         ))}
                     </Box>
+                    <Link to={'/carrinho'}>
                     <ShoppingCartIcon color="primary" style={{marginRight: 20 }} />
+                    </Link>
                     <Box sx={{ flexGrow: 0 }}>
                     
                         <Tooltip title="Abra configurações">
@@ -264,8 +261,12 @@ function Navbar() {
         </AppBar>
 
 
-    } else{
-      navbarComponent = <AppBar position="static" style={{ backgroundColor: "#ffffff" }}>
+    } else if(currentUrl == '/login' || currentUrl =='/cadastro'){
+
+        navbarComponent = (null)
+
+    }else{
+      navbarComponent = <AppBar position="static" style={{ backgroundColor: "#ffffff", boxShadow:'none'  }}>
             <Container maxWidth="xl">
             <Toolbar disableGutters style={{marginLeft:5, color: 'black'}}>
                     
@@ -285,7 +286,7 @@ function Navbar() {
                         }}
                         style={{marginRight:300, color: '#527146'}}
                     >
-                        Terra Verde
+                        <img src=""/>
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -346,7 +347,7 @@ function Navbar() {
                     >
                         Terra Verde
                     </Typography>
-                    <Box gap={2} sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                    <Box gap={2} sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, marginLeft:'80px' }}>
                         {Inicialpages.map((page) => (
                             <Button
                                 key={page.nome}
@@ -361,10 +362,10 @@ function Navbar() {
                         ))}
                     </Box>
 
-                    <Box sx={{ flexGrow: 0 }}>
+                    <Box sx={{ flexGrow: 0, marginRight:'20px' }}>
                         <Tooltip title="Venha nos conhecer!">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar  src="https://i.imgur.com/moTZhZy.png" />
+                                <Avatar  src="https://i.imgur.com/YxU9UAj.png" className="logoImage" />
                             </IconButton>
                         </Tooltip>
                         <Menu
@@ -373,12 +374,12 @@ function Navbar() {
                             anchorEl={anchorElUser}
                             anchorOrigin={{
                                 vertical: 'top',
-                                horizontal: 'right',
+                                horizontal: 'center',
                             }}
                             keepMounted
                             transformOrigin={{
                                 vertical: 'top',
-                                horizontal: 'right',
+                                horizontal: 'center',
                             }}
                             open={Boolean(anchorElUser)}
                             onClose={handleCloseUserMenu}

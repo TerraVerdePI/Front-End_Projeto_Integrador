@@ -12,7 +12,7 @@ import Navbar from '../navbar/Navbar'
 import Footer from '../footer/Footer'
 import Produto from '../../../model/Produto'
 import { toast } from 'react-toastify'
-import { addToken } from '../../../store/tokens/actions'
+import { addToken } from '../../../store/tokens/Action'
 import * as FaIcons from 'react-icons/fa'
 
 const SidebarMenu = styled.div`

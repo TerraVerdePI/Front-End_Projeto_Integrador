@@ -25,7 +25,7 @@ function CarouselHome() {
                 disableOnInteraction: false,
             }}
             className='swiper-container'
-            style={{marginLeft:'-20px', width:'100%', marginTop:'40px', borderRadius:'20px'}} >
+            style={{ width:'95%', marginTop:'40px', borderRadius:'60px'}} >
             <SwiperSlide className='slide-item' >
                 <Link to='/'>
                 <img src="https://i.imgur.com/Z0DsPYk.png" alt="" width="500px" height="300px" />

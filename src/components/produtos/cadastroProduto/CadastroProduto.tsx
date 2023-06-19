@@ -1,16 +1,18 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
 import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText, Box } from "@material-ui/core"
 import './CadastroProduto.css';
-import {useNavigate, useParams } from 'react-router-dom'
+import {Link, useNavigate, useParams } from 'react-router-dom'
 import Categoria from '../../../model/Categoria';
 import Produto from '../../../model/Produto';
 import { busca, buscaId, post, put } from '../../../services/Service';
 import { useDispatch, useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import Usuario from '../../../model/Usuario';
-import { addToken } from '../../../store/tokens/actions';
+import { addToken } from '../../../store/tokens/Action';
 import { Grid } from '@mui/material';
 import { toast } from 'react-toastify';
+import { FaPlus } from 'react-icons/fa';
+import ModalCategoria from '../../categoria/modalCategoria/ModalCategoria';
 
 function CadastroProduto() {
  
@@ -180,7 +182,7 @@ function CadastroProduto() {
                 <TextField className='sizeLast' value={produto.unidade_de_medida} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="unidade_de_medida" label="Unidade de Medida" name="unidade_de_medida" variant="outlined" margin="normal" fullWidth/>
                 </Box>
                 
-
+                <Box  display={'flex'} alignItems={'center'}>
                 <FormControl >
                     <InputLabel id="demo-simple-select-helper-label">Categoria </InputLabel>
                     <Select
@@ -194,11 +196,19 @@ function CadastroProduto() {
                         {
                             categorias.map(categoria => (
                                 <MenuItem value={categoria.id}>{categoria.descricao}</MenuItem>
+                                
                             ))
                         }
+                        
                     </Select>
+                    
                     <FormHelperText>Escolha uma categoria para o produto</FormHelperText>
+                    
                 </FormControl>
+                
+                <ModalCategoria/>
+                </Box>
+                
                 <Box display={'flex'} className='boxText'>
                 <TextField className='size' value={produto.validade} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="validade" label="Validade" name="validade" variant="outlined" margin="normal" fullWidth />
                 <TextField className='size' value={produto.regiao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="regiao" label="Região" name="regiao" variant="outlined" margin="normal" fullWidth/>
