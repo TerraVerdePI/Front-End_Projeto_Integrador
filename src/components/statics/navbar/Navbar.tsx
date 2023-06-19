@@ -1,161 +1,407 @@
-import { AppBar, Toolbar, Box, Typography, Grid, Button } from '@mui/material';
-import './Navbar.css';
-import { Link, useLocation, useNavigate } from 'react-router-dom'; 
+import React from "react";
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import Menu from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
+import Container from '@mui/material/Container';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import Tooltip from '@mui/material/Tooltip';
+import MenuItem from '@mui/material/MenuItem';
+import Diversity1Icon from '@mui/icons-material/Diversity1';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
 import { addToken } from "../../../store/tokens/actions";
-import ShoppingCartSharpIcon from '@mui/icons-material/ShoppingCartSharp';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import AvatarPerfil from './AvatarPerfil';
-import AddCircleSharpIcon from '@mui/icons-material/AddCircleSharp';
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+
+const settings = [
+    {
+        nome: 'Perfil',
+        link: '/perfil'
+    },
+    {
+        nome: 'Categorias',
+        link: '/formularioCategoria'
+    },
+    {
+        nome: 'Recomendações',
+        link: '/'
+    }
+]
+
+const pages = [
+    {
+        nome: 'Inicio',
+        link: '/home'
+    },
+    {
+        nome: 'Sobre Nós',
+        link: '/sobre'
+    },
+    {
+        nome: 'BlogTV',
+        link: 'https://blog-pessoal-front-ruby.vercel.app/'
+    },
+  
+]
+
+const Inicialpages = [
+  {
+      nome: 'Inicio',
+      link: '/'
+  },
+  {
+      nome: 'Sobre Nós',
+      link: '/sobre'
+  },
+  {
+      nome: 'P&R',
+      link: '/'
+  },
+  {
+    nome: 'BlogTV',
+    link: 'https://blog-pessoal-front-ruby.vercel.app/'
+  }
+
+]
+
+const InicialSettings = [
+  {
+      nome: 'Entrar',
+      link: '/login'
+  },
+  {
+      nome: 'Cadastrar',
+      link: '/cadastro'
+  }
+]
 
 function Navbar() {
-  const token = useSelector<TokenState, TokenState["tokens"]>(
-    (state) => state.tokens
-  );
-  
-  const location = useLocation();
-  const currentUrl = location.pathname;
-  const dispatch = useDispatch()
-  const navigate = useNavigate();
-
-  function logout() {
-    
-    toast.success('Usuário deslogado com sucesso!', {
-      position: "top-right",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: false,
-      draggable: false,
-      theme: "colored",
-      progress: undefined,
-      });
-
-    dispatch(addToken(''))
-    navigate('/login');
-  }
-
-  let navbarComponent;
-
-  if (token !== '') {
+    const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
+    const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 
 
-    navbarComponent = (
-      <AppBar position="static" className="navbar">
-        <Toolbar >
-          <Grid container justifyContent={'space-between'} className='fonte' direction={"row"}>
-            <Box style={{ cursor: 'pointer' }}>
-            <img src="https://i.imgur.com/moTZhZy.png" alt="" className='imagem' />
-            </Box>
-            <Box display="flex" justifyContent="center" alignItems={"center"}>
-              <Link to="/home" style={{ textDecoration: 'none' }}>
-                <Box mx={1} style={{ cursor: 'pointer' }}>
-                  <Typography variant="h6" className='linha' color="black">
-                    Pagina Inicial
-                  </Typography>
-                </Box>
-              </Link>
-              <Link to="/sobre" style={{ textDecoration: 'none' }}>
-                <Box mx={1} style={{ cursor: 'pointer' }}>
-                  <Typography variant="h6" className='linha' color="black">
-                    Sobre Nós
-                  </Typography>
-                </Box>
-              </Link>
-              <Link to="https://blog-pessoal-front-ruby.vercel.app/" style={{ textDecoration: 'none' }}>
-                <Box mx={1} style={{ cursor: 'pointer' }}>
-                  <Typography variant="h6" className='linha' color="black">
-                    BlogTV
-                  </Typography>
-                </Box>
-              </Link>
-            </Box>
-            <Grid direction={"row"} display={"flex"}>
-              <Box mx={1} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
-                <ShoppingCartSharpIcon color="primary" />
-              </Box>
-              <Box mx={1} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
-                < NotificationsIcon color="primary" />
-              </Box>
-              <Box mx={1} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
-                </Box>
-              <Box mx={1} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
-                <AvatarPerfil />
-              </Box>
-            </Grid>
-          </Grid>
-        </Toolbar>
-      </AppBar>
+    const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
+        setAnchorElNav(event.currentTarget);
+    };
+    const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
+        setAnchorElUser(event.currentTarget);
+    };
+
+    const handleCloseNavMenu = () => {
+        setAnchorElNav(null);
+    };
+
+    const handleCloseUserMenu = () => {
+        setAnchorElUser(null);
+    };
+
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    );
+    const dispatch = useDispatch();
+    let navigate = useNavigate();
+
+    function goLogout() {
+        dispatch(addToken(''));
+        toast.info('Usuário deslogado!', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            });
+        navigate('/login')
+    }
+
+    var navbarComponent;
+
+    if (token != "") {
+
+        navbarComponent = <AppBar position="static" style={{ backgroundColor: "#ffffff" }}>
+            <Container maxWidth="xl">
+                <Toolbar disableGutters style={{marginLeft:40, color: 'black'}}>
+                    
+                    <Typography
+                        variant="h6"
+                        noWrap
+                        component="a"
+                        href="/"
+                        sx={{
+                            mr: 2,
+                            display: { xs: 'none', md: 'flex' },
+                            fontFamily: 'monospace',
+                            fontWeight: 700,
+                            letterSpacing: '.3rem',
+                            color: 'inherit',
+                            textDecoration: 'none',
+                        }}
+                        style={{marginRight:300, marginLeft:10, color: '#527146'}}
+                    >
+                        Terra Verde
+                    </Typography>
+                    
+
+                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                        <IconButton
+                            size="large"
+                            aria-label="account of current user"
+                            aria-controls="menu-appbar"
+                            aria-haspopup="true"
+                            onClick={handleOpenNavMenu}
+                            color="inherit"
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                        <Menu
+                            id="menu-appbar"
+                            anchorEl={anchorElNav}
+                            anchorOrigin={{
+                                vertical: 'bottom',
+                                horizontal: 'left',
+                            }}
+                            keepMounted
+                            transformOrigin={{
+                                vertical: 'top',
+                                horizontal: 'left',
+                            }}
+                            open={Boolean(anchorElNav)}
+                            onClose={handleCloseNavMenu}
+                            sx={{
+                                display: { xs: 'block', md: 'none' },
+                            }}
+                        >
+                            {pages.map((page) => (
+                                <MenuItem key={page.nome} style={{ display: "block", margin: "10px" }} onClick={handleCloseNavMenu}>
+                                    <Link to={page.link} className="text-decorator-none">
+                                        <Typography textAlign="center" color="inherit" style={{ color: 'black' }}>{page.nome}</Typography>
+                                    </Link>
+                                </MenuItem>
+                            ))}
+                        </Menu>
+                    </Box>
+
+                    <Typography
+                        variant="h5"
+                        noWrap
+                        component="a"
+                        href=""
+                        sx={{
+                            mr: 2,
+                            display: { xs: 'flex', md: 'none' },
+                            flexGrow: 1,
+                            fontFamily: 'monospace',
+                            fontWeight: 700,
+                            letterSpacing: '.3rem',
+                            color: 'inherit',
+                            textDecoration: 'none',
+                        }}
+                        style={{ color: '#527146' }}
+                    >
+                        Terra Verde
+                    </Typography>
+                    <Box gap={2} sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                        {pages.map((page) => (
+                            <Button
+                                key={page.nome}
+                                onClick={handleCloseNavMenu}
+                                sx={{ my: 2, color: '#ffff', display: 'block' }}
+                                style={{ color: "#ffff" }}
+                            >
+                                <Link to={page.link} className="text-decorator-none">
+                                    <Typography textAlign="center" color="inherit" style={{ color: 'black' }}>{page.nome}</Typography>
+                                </Link>
+                            </Button>
+                        ))}
+                    </Box>
+                    <ShoppingCartIcon color="primary" style={{marginRight: 20 }} />
+                    <Box sx={{ flexGrow: 0 }}>
+                    
+                        <Tooltip title="Abra configurações">
+                            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                                <Avatar alt="Foto Perfil" src=" " />
+                            </IconButton>
+                        </Tooltip>
+                        <Menu
+                            sx={{ mt: '45px' }}
+                            id="menu-appbar"
+                            anchorEl={anchorElUser}
+                            anchorOrigin={{
+                                vertical: 'top',
+                                horizontal: 'right',
+                            }}
+                            keepMounted
+                            transformOrigin={{
+                                vertical: 'top',
+                                horizontal: 'right',
+                            }}
+                            open={Boolean(anchorElUser)}
+                            onClose={handleCloseUserMenu}
+                        >
+                            {settings.map((setting) => (
+                                <MenuItem key={setting.nome} style={{ display: "block", margin: "10px" }} onClick={handleCloseUserMenu}>
+                                    <Link to={setting.link} className="text-decorator-none">
+                                        <Typography textAlign="center" color="inherit" style={{ color: 'black' }}>{setting.nome}</Typography>
+                                    </Link>
+                                </MenuItem>
+                            ))}
+                            <MenuItem style={{ display: "block", margin: "10px" }}>
+                                <Typography onClick={goLogout} textAlign="center" color="inherit" style={{ color: 'black' }}>Sair</Typography>
+                            </MenuItem>
+                        </Menu>
+                    </Box>
+                </Toolbar>
+            </Container>
+        </AppBar>
+
+
+    } else{
+      navbarComponent = <AppBar position="static" style={{ backgroundColor: "#ffffff" }}>
+            <Container maxWidth="xl">
+            <Toolbar disableGutters style={{marginLeft:5, color: 'black'}}>
+                    
+                    <Typography
+                        variant="h6"
+                        noWrap
+                        component="a"
+                        href="/"
+                        sx={{
+                            mr: 2,
+                            display: { xs: 'none', md: 'flex' },
+                            fontFamily: 'monospace',
+                            fontWeight: 700,
+                            letterSpacing: '.3rem',
+                            color: 'inherit',
+                            textDecoration: 'none',
+                        }}
+                        style={{marginRight:300, color: '#527146'}}
+                    >
+                        Terra Verde
+                    </Typography>
+
+                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                        <IconButton
+                            size="large"
+                            aria-label="account of current user"
+                            aria-controls="menu-appbar"
+                            aria-haspopup="true"
+                            onClick={handleOpenNavMenu}
+                            color="inherit"
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                        <Menu
+                            id="menu-appbar"
+                            anchorEl={anchorElNav}
+                            anchorOrigin={{
+                                vertical: 'bottom',
+                                horizontal: 'left',
+                            }}
+                            keepMounted
+                            transformOrigin={{
+                                vertical: 'top',
+                                horizontal: 'left',
+                            }}
+                            open={Boolean(anchorElNav)}
+                            onClose={handleCloseNavMenu}
+                            sx={{
+                                display: { xs: 'block', md: 'none' },
+                            }}
+                        >
+                            {Inicialpages.map((page) => (
+                                <MenuItem key={page.nome} style={{ display: "block", margin: "10px" }} onClick={handleCloseNavMenu}>
+                                    <Link to={page.link} className="text-decorator-none">
+                                        <Typography textAlign="center" color="inherit" style={{ color: 'black' }}>{page.nome}</Typography>
+                                    </Link>
+                                </MenuItem>
+                            ))}
+                        </Menu>
+                    </Box>
+
+                    <Typography
+                        variant="h5"
+                        noWrap
+                        component="a"
+                        href=""
+                        sx={{
+                            mr: 2,
+                            display: { xs: 'flex', md: 'none' },
+                            flexGrow: 1,
+                            fontFamily: 'monospace',
+                            fontWeight: 700,
+                            letterSpacing: '.3rem',
+                            color: 'inherit',
+                            textDecoration: 'none',
+                        }}
+                        style={{color: '#527146'}}
+                    >
+                        Terra Verde
+                    </Typography>
+                    <Box gap={2} sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                        {Inicialpages.map((page) => (
+                            <Button
+                                key={page.nome}
+                                onClick={handleCloseNavMenu}
+                                sx={{ my: 2, color: '#ffff', display: 'block' }}
+                                style={{ color: "#ffff" }}
+                            >
+                                <Link to={page.link} className="text-decorator-none">
+                                    <Typography textAlign="center" alignItems={'center'} color="inherit" style={{ color: 'black' }}>{page.nome}</Typography>
+                                </Link>
+                            </Button>
+                        ))}
+                    </Box>
+
+                    <Box sx={{ flexGrow: 0 }}>
+                        <Tooltip title="Venha nos conhecer!">
+                            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                                <Avatar  src="https://i.imgur.com/moTZhZy.png" />
+                            </IconButton>
+                        </Tooltip>
+                        <Menu
+                            sx={{ mt: '45px' }}
+                            id="menu-appbar"
+                            anchorEl={anchorElUser}
+                            anchorOrigin={{
+                                vertical: 'top',
+                                horizontal: 'right',
+                            }}
+                            keepMounted
+                            transformOrigin={{
+                                vertical: 'top',
+                                horizontal: 'right',
+                            }}
+                            open={Boolean(anchorElUser)}
+                            onClose={handleCloseUserMenu}
+                        >
+                            {InicialSettings.map((setting) => (
+                                <MenuItem key={setting.nome} style={{ display: "block", margin: "10px" }} onClick={handleCloseUserMenu}>
+                                    <Link to={setting.link} className="text-decorator-none">
+                                        <Typography textAlign="center" color="inherit" style={{ color: 'black' }}>{setting.nome}</Typography>
+                                    </Link>
+                                </MenuItem>
+                            ))}
+                            
+                        </Menu>
+                    </Box>
+                </Toolbar>
+            </Container>
+        </AppBar>
+    }
+
+    return (
+        <>
+            {navbarComponent}
+        </>
     )
-  } else if( currentUrl == '/login' || currentUrl =='/cadastro'){
-    navbarComponent = (null)
-  }else {
-      navbarComponent = (
-        <AppBar position="static" className="navbar">
-        <Toolbar >
-          <Grid container justifyContent={'space-between'} className='fonte' direction={"row"}>
-            <Box >
-                <img src="https://i.imgur.com/moTZhZy.png" alt="" className='imagem' />
-            </Box>
-            <Box display="flex" justifyContent="center" alignItems={"center"} style={{marginLeft:'80px'}}>
-              <Link to="/" style={{ textDecoration: 'none' }}>
-                <Box mx={1} style={{ cursor: 'pointer' }}>
-                  <Typography variant="h6" className='linha' color="black">
-                    Pagina Inicial
-                  </Typography>
-                </Box>
-              </Link>
-              <Link to="/sobre" style={{ textDecoration: 'none' }}>
-                <Box mx={1} style={{ cursor: 'pointer' }}>
-                  <Typography variant="h6" className='linha' color="black">
-                    Sobre nós
-                  </Typography>
-                </Box>
-              </Link>
-              <Link to="/" style={{ textDecoration: 'none' }}>
-                <Box mx={1} style={{ cursor: 'pointer' }}>
-                  <Typography variant="h6" className='linha' color="black">
-                    P&R
-                  </Typography>
-                </Box>
-              </Link>
-              <Link to="https://blog-pessoal-front-ruby.vercel.app/" style={{ textDecoration: 'none' }}>
-                <Box mx={1} style={{ cursor: 'pointer' }}>
-                  <Typography variant="h6" className='linha' color="black">
-                    BlogTV
-                  </Typography>
-                </Box>
-              </Link>
-            </Box>
-            <Grid direction={"row"} display={"flex"}>
-              <Box mx={1} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
-                <Link to="/login">
-                  <Button className='botao' color="secondary" variant="contained" style={{ marginLeft: 'auto' }}>
-                    Entrar
-                  </Button>
-                </Link>
-              </Box>
-              <Box mx={1} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
-              <Link to="/cadastro">
-                <Button className='botao' color="secondary" variant="contained" style={{ marginLeft: 'auto' }}>
-                  Cadastrar
-                </Button>
-              </Link>
-              </Box>
-            </Grid>
-          </Grid>
-        </Toolbar>
-      </AppBar>
-      )
-  }
-
-  return (
-    <>
-      {navbarComponent}
-    </>
-  );
-}
+};
 
 export default Navbar;
