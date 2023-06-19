@@ -3,6 +3,7 @@
 }
 
 .input-busca {
+
     width: 800px;
     display: block;
     margin: 0 auto;
@@ -112,6 +113,7 @@
 .botao-carregarMais{
   background-color: #465362!important;
   color: white  !important;
+
   border-radius: 40px!important;
   width: 240px!important;
 }
@@ -124,4 +126,6 @@
   font-size: 24px!important;
   font-weight: 600!important;
 }
+
+
 
